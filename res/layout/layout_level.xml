@@ -70,7 +70,16 @@
     <LinearLayout a:id="@+id/banner"
                   a:layout_width="fill_parent" a:layout_height="wrap_content"
                   a:layout_alignParentBottom="true"
-            />
+            >
+        <com.emrg.view.CheckImageView
+                a:id="@+id/banner"
+                a:layout_width="fill_parent"
+                a:layout_height="wrap_content"
+                a:scaleType="fitCenter"
+                a:adjustViewBounds="true"
+                a:src="@drawable/snappers_banner"/>
+
+    </LinearLayout>
 
 
 </RelativeLayout>

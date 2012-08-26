@@ -9,10 +9,16 @@ package com.emerginggames.floors;
 
 public final class R {
     public static final class anim {
-        public static final int left_door_open=0x7f040000;
-        public static final int move_level_down=0x7f040001;
-        public static final int move_level_from_up=0x7f040002;
-        public static final int right_door_open=0x7f040003;
+        public static final int dialog_enter=0x7f040000;
+        public static final int dialog_overshoot=0x7f040001;
+        public static final int left_door_open=0x7f040002;
+        public static final int move_level_down=0x7f040003;
+        public static final int move_level_from_up=0x7f040004;
+        public static final int right_door_open=0x7f040005;
+        public static final int slide_in_left=0x7f040006;
+        public static final int slide_in_right=0x7f040007;
+        public static final int slide_out_left=0x7f040008;
+        public static final int slide_out_right=0x7f040009;
     }
     public static final class attr {
     }
@@ -35,34 +41,35 @@ public final class R {
         public static final int icon=0x7f02000f;
         public static final int menu_button=0x7f020010;
         public static final int restart_button=0x7f020011;
-        public static final int toolbar=0x7f020012;
-        public static final int toolbar_cell=0x7f020013;
-        public static final int toolbar_cell_2state=0x7f020014;
-        public static final int up_btn_green=0x7f020015;
+        public static final int snappers_banner=0x7f020012;
+        public static final int toolbar=0x7f020013;
+        public static final int toolbar_cell=0x7f020014;
+        public static final int toolbar_cell_2state=0x7f020015;
+        public static final int up_btn_green=0x7f020016;
     }
     public static final class id {
-        public static final int banner=0x7f060002;
-        public static final int cell1=0x7f060004;
-        public static final int cell2=0x7f060005;
-        public static final int cell3=0x7f060006;
-        public static final int cell4=0x7f060007;
-        public static final int down_btn=0x7f06000d;
-        public static final int elev_doors=0x7f060012;
-        public static final int elevator=0x7f06000b;
-        public static final int elevator_door_left=0x7f060013;
-        public static final int elevator_door_right=0x7f060014;
-        public static final int elevator_frame=0x7f060015;
-        public static final int elevator_inner=0x7f060011;
-        public static final int floor=0x7f06000a;
-        public static final int key=0x7f06000e;
-        public static final int levelCont=0x7f060000;
-        public static final int menuButton=0x7f060003;
-        public static final int note=0x7f06000f;
-        public static final int note_large=0x7f060010;
-        public static final int restartButton=0x7f060008;
-        public static final int toolbar=0x7f060001;
-        public static final int up_btn=0x7f06000c;
-        public static final int wall=0x7f060009;
+        public static final int banner=0x7f070002;
+        public static final int cell1=0x7f070004;
+        public static final int cell2=0x7f070005;
+        public static final int cell3=0x7f070006;
+        public static final int cell4=0x7f070007;
+        public static final int down_btn=0x7f07000d;
+        public static final int elev_doors=0x7f070012;
+        public static final int elevator=0x7f07000b;
+        public static final int elevator_door_left=0x7f070013;
+        public static final int elevator_door_right=0x7f070014;
+        public static final int elevator_frame=0x7f070015;
+        public static final int elevator_inner=0x7f070011;
+        public static final int floor=0x7f07000a;
+        public static final int key=0x7f07000e;
+        public static final int levelCont=0x7f070000;
+        public static final int menuButton=0x7f070003;
+        public static final int note=0x7f07000f;
+        public static final int note_large=0x7f070010;
+        public static final int restartButton=0x7f070008;
+        public static final int toolbar=0x7f070001;
+        public static final int up_btn=0x7f07000c;
+        public static final int wall=0x7f070009;
     }
     public static final class layout {
         public static final int layout_level=0x7f030000;
@@ -73,5 +80,10 @@ public final class R {
     }
     public static final class string {
         public static final int app_name=0x7f050000;
+    }
+    public static final class style {
+        public static final int Animation_CustomAnimation=0x7f060001;
+        public static final int Animation_DialogAnimation=0x7f060002;
+        public static final int appTheme=0x7f060000;
     }
 }

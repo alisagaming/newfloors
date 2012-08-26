@@ -37,6 +37,7 @@ public class Level03 extends Level {
     @Override
     public void start() {
         super.start();
+        startShakeListener();
     }
 
     @Override
@@ -56,10 +57,24 @@ public class Level03 extends Level {
         findViewById(R.id.note_large).setVisibility(VISIBLE);
     }
 
-    void onShake(){
-        if (!elevator.isOpening() && !elevator.isOpen())
-            elevator.openDoors();
+    @Override
+    public void onResume() {
+        startShakeListener();
     }
+
+    @Override
+    public void onPause() {
+        stopShakeListener();
+    }
+
+    void onShake(){
+        if (!elevator.isOpening() && !elevator.isOpen()){
+            elevator.openDoors();
+            stopShakeListener();
+        }
+    }
+
+
 
 
     //Shake detector
@@ -87,19 +102,19 @@ public class Level03 extends Level {
         }
     };
 
-    @Override
-    public void onResume() {
-        mSensorManager.registerListener(mSensorListener, mSensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER), SensorManager.SENSOR_DELAY_NORMAL);
+
+
+    void stopShakeListener(){
+        mSensorManager.unregisterListener(mSensorListener);
     }
 
-    @Override
-    public void onPause() {
-        mSensorManager.unregisterListener(mSensorListener);
+    void startShakeListener(){
+        if (mSensorManager != null)
+            mSensorManager.registerListener(mSensorListener, mSensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER), SensorManager.SENSOR_DELAY_NORMAL);
     }
 
     void initShakeDetector(){
         mSensorManager = (SensorManager) getContext().getSystemService(Context.SENSOR_SERVICE);
-        mSensorManager.registerListener(mSensorListener, mSensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER), SensorManager.SENSOR_DELAY_NORMAL);
         mAccel = 0.00f;
         mAccelCurrent = SensorManager.GRAVITY_EARTH;
         mAccelLast = SensorManager.GRAVITY_EARTH;
