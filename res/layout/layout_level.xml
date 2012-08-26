@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:a="http://schemas.android.com/apk/res/android"
+                a:layout_width="fill_parent"
+                a:layout_height="fill_parent">
+    <RelativeLayout a:id="@+id/levelCont"
+                  a:layout_width="fill_parent" a:layout_height="fill_parent"
+                  a:layout_alignParentTop="true"
+                  a:layout_above="@+id/toolbar"
+            />
+
+    <LinearLayout a:id="@+id/toolbar"
+                  a:layout_width="fill_parent" a:layout_height="wrap_content"
+                  a:layout_above="@+id/banner" a:orientation="horizontal"
+                  a:background="@drawable/toolbar"
+            >
+        <com.emrg.view.ImageView a:id="@+id/menuButton"
+                                 a:layout_width="0px" a:layout_height="wrap_content"
+                                 a:scaleType="fitCenter"
+                                 a:adjustViewBounds="true"
+                                 a:src="@drawable/menu_button"
+                                 a:layout_weight="20"
+                                 a:onClick="OnMenuButtonClick"
+                />
+
+        <com.emrg.view.CheckImageView a:id="@+id/cell1"
+                                      a:layout_width="0px" a:layout_height="fill_parent"
+                                      a:scaleType="center"
+                                      a:background="@drawable/toolbar_cell_2state"
+                                      a:layout_weight="20"
+                                      a:onClick="OnCellClick"
+                />
+
+        <com.emrg.view.CheckImageView a:id="@+id/cell2"
+                                      a:layout_width="0px" a:layout_height="fill_parent"
+                                      a:scaleType="center"
+                                      a:background="@drawable/toolbar_cell_2state"
+                                      a:layout_weight="20"
+                                      a:onClick="OnCellClick"
+                />
+
+        <com.emrg.view.CheckImageView a:id="@+id/cell3"
+                                      a:layout_width="0px" a:layout_height="fill_parent"
+                                      a:scaleType="fitCenter"
+                                      a:background="@drawable/toolbar_cell_2state"
+                                      a:layout_weight="20"
+                                      a:onClick="OnCellClick"
+                />
+
+        <com.emrg.view.CheckImageView a:id="@+id/cell4"
+                                      a:layout_width="0px" a:layout_height="fill_parent"
+                                      a:scaleType="fitCenter"
+                                      a:background="@drawable/toolbar_cell_2state"
+                                      a:layout_weight="20"
+                                      a:onClick="OnCellClick"
+                />
+
+        <com.emrg.view.ImageView a:id="@+id/restartButton"
+                                 a:layout_width="0px" a:layout_height="wrap_content"
+                                 a:scaleType="fitCenter"
+                                 a:adjustViewBounds="true"
+                                 a:src="@drawable/restart_button"
+                                 a:layout_weight="20"
+                                 a:onClick="OnRestartButtonClick"
+                />
+
+    </LinearLayout>
+
+
+    <LinearLayout a:id="@+id/banner"
+                  a:layout_width="fill_parent" a:layout_height="wrap_content"
+                  a:layout_alignParentBottom="true"
+            />
+
+
+</RelativeLayout>

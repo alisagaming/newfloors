@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_checked="true">
+        <layer-list>
+            <item>
+                <bitmap android:src="@drawable/toolbar_cell"/>
+            </item>
+            <item>
+                <shape android:shape="rectangle">
+                    <solid android:color="#00000000"/>
+                    <padding android:bottom="2px" android:left="2px" android:right="2px" android:top="2px"/>
+                </shape>
+            </item>
+            <item>
+                <shape android:shape="rectangle">
+                    <stroke android:color="#fe4009" android:width="4px"/>
+                    <solid android:color="#00000000"/>
+                </shape>
+            </item>
+        </layer-list>
+    </item>
+
+
+    <item android:state_checked="false">
+        <bitmap android:src="@drawable/toolbar_cell"/>
+    </item>
+</selector>

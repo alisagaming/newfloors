@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+
+        >
+    <com.emrg.view.ImageView android:id="@+id/wall"
+                             android:layout_width="fill_parent" android:layout_height="wrap_content"
+                             android:adjustViewBounds="true" android:scaleType="fitCenter"
+                             android:src="@drawable/fl2_wall"
+                             android:layout_alignParentTop="true"
+
+            />
+    <com.emrg.view.ImageView android:id="@+id/floor"
+                             android:layout_width="fill_parent" android:layout_height="wrap_content"
+                             android:adjustViewBounds="true" android:scaleType="fitXY"
+                             android:layout_below="@+id/wall"
+                             android:src="@drawable/fl2_floor"
+            />
+
+    <com.emerginggames.floors.levels.Elevator android:id="@+id/elevator"
+                                              android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                              android:layout_centerHorizontal="true"
+                                              android:layout_above="@+id/floor"
+                                              android:layout_marginBottom="-6px"
+                                              android:layout_alignParentTop="false"
+            />
+
+    <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
+                  android:orientation="vertical"
+                  android:layout_alignBottom="@+id/elevator"
+                  android:layout_toRightOf="@+id/elevator"
+                  android:layout_marginBottom="55dp"
+                  android:layout_marginLeft="10dp"
+            >
+        <com.emrg.view.ImageView
+                android:id="@+id/up_btn"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:src="@drawable/up_btn_green"
+                android:layout_marginBottom="5dp"
+                />
+        <com.emrg.view.ImageView
+                android:id="@+id/down_btn"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:src="@drawable/down_btn_red"
+                />
+    </LinearLayout>
+
+    <com.emrg.view.ImageView
+        android:id="@+id/key"
+        android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:src="@drawable/fl2_key"
+        android:layout_alignLeft="@+id/elevator"
+        android:layout_alignBottom="@+id/elevator"
+        android:layout_marginLeft="40px"
+        android:layout_marginBottom="400px"
+        />
+
+
+</RelativeLayout>
