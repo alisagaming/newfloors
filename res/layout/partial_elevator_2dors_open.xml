@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+    <RelativeLayout android:id="@+id/elevator_inner"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+            >
+
+        <com.emrg.view.ImageView
+                android:id="@+id/elevator_inner_img"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:scaleType="fitCenter"
+                android:adjustViewBounds="true"
+                android:src="@drawable/elev_inner"
+                />
+
+        <com.emrg.view.ImageView
+                android:id="@+id/elevator_inner_arrow_up"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:scaleType="fitCenter"
+                android:adjustViewBounds="true"
+                android:src="@drawable/elevator_arrow_up"
+                android:layout_centerInParent="true"
+                />
+    </RelativeLayout>
+
+    <com.emrg.view.ImageView
+            android:id="@+id/elevator_frame"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:scaleType="fitCenter"
+            android:adjustViewBounds="true"
+            android:layout_centerHorizontal="true"
+
+            />
+
+
+    <LinearLayout android:id="@+id/elev_doors"
+                  android:layout_width="wrap_content" android:layout_height="wrap_content"
+                  android:orientation="horizontal"
+                  android:layout_centerHorizontal="true"
+                  android:gravity="center_vertical"
+            >
+        <com.emrg.view.ImageView
+                android:id="@+id/elevator_door_left_open"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:scaleType="fitCenter"
+                android:adjustViewBounds="true"
+                android:src="@drawable/elev5_door_l_open"
+                android:visibility="invisible"
+                />
+
+        <com.emrg.view.ImageView
+                android:id="@+id/elevator_door_left"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:scaleType="fitCenter"
+                android:adjustViewBounds="true"
+                android:src="@drawable/elev5_door_l"
+                />
+        <com.emrg.view.ImageView
+                android:id="@+id/elevator_door_right"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:scaleType="fitCenter"
+                android:adjustViewBounds="true"
+                android:src="@drawable/elev5_door_r"
+                android:visibility="invisible"
+                />
+        <com.emrg.view.ImageView
+                android:id="@+id/elevator_door_right_open"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:scaleType="fitCenter"
+                android:adjustViewBounds="true"
+                android:src="@drawable/elev5_door_r_open"
+
+                />
+    </LinearLayout>
+
+
+
+</RelativeLayout>

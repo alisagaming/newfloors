@@ -19,14 +19,17 @@ public class ImageView extends android.widget.ImageView {
 
     public ImageView(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
+        setSoundEffectsEnabled(false);
     }
 
     public ImageView(Context context, AttributeSet attrs) {
         super(context, attrs);
+        setSoundEffectsEnabled(false);
     }
 
     public ImageView(Context context) {
         super(context);
+        setSoundEffectsEnabled(false);
     }
 
     public void setAdjustViewBounds(boolean adjustViewBounds) {

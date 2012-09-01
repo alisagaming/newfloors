@@ -49,6 +49,14 @@ public class Level03 extends Level {
                 findViewById(R.id.note_large).setVisibility(GONE);
             }
         });
+
+        scaleImageSize(R.id.up_btn);
+        scaleImageSize(R.id.down_btn);
+
+        scaleImageSize(R.id.note);
+        scaleMargins(R.id.note, true, false, false, true);
+        scaleImageSize(R.id.note_large);
+
     }
 
     @Override
@@ -94,7 +102,7 @@ public class Level03 extends Level {
             mAccelCurrent = (float) Math.sqrt((double) (x*x + y*y + z*z));
             float delta = mAccelCurrent - mAccelLast;
             mAccel = mAccel * 0.9f + delta; // perform low-cut filter
-            if (mAccel > 2)
+            if (mAccel > 4)
                 onShake();
         }
 

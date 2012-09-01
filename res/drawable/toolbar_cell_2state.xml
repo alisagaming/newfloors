@@ -4,13 +4,7 @@
     <item android:state_checked="true">
         <layer-list>
             <item>
-                <bitmap android:src="@drawable/toolbar_cell"/>
-            </item>
-            <item>
-                <shape android:shape="rectangle">
-                    <solid android:color="#00000000"/>
-                    <padding android:bottom="2px" android:left="2px" android:right="2px" android:top="2px"/>
-                </shape>
+                <nine-patch android:src="@drawable/toolbar_cell"/>
             </item>
             <item>
                 <shape android:shape="rectangle">
@@ -23,6 +17,16 @@
 
 
     <item android:state_checked="false">
-        <bitmap android:src="@drawable/toolbar_cell"/>
+        <layer-list>
+            <item>
+                <nine-patch android:src="@drawable/toolbar_cell"/>
+            </item>
+            <item>
+                <shape android:shape="rectangle">
+                    <stroke android:color="#00000000" android:width="4px"/>
+                    <solid android:color="#00000000"/>
+                </shape>
+            </item>
+        </layer-list>
     </item>
 </selector>

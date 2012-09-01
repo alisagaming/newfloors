@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+
+        >
+    <com.emrg.view.ImageView android:id="@+id/wall"
+                             android:layout_width="fill_parent" android:layout_height="wrap_content"
+                             android:adjustViewBounds="true" android:scaleType="fitCenter"
+                             android:src="@drawable/level4_wall"
+                             android:layout_alignParentTop="true"
+
+            />
+    <com.emrg.view.ImageView android:id="@+id/floor"
+                             android:layout_width="fill_parent" android:layout_height="wrap_content"
+                             android:adjustViewBounds="true" android:scaleType="fitCenter"
+                             android:layout_below="@+id/wall"
+                             android:src="@drawable/level4_floor"
+            />
+
+    <com.emrg.view.ImageView
+            android:id="@+id/button"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:src="@drawable/level04_button"
+            android:scaleType="fitCenter"
+            android:layout_alignParentRight="true"
+            android:layout_above="@+id/floor"
+            android:layout_marginBottom="100px"
+            android:layout_marginRight="50px"
+            android:layout_marginTop="15px"
+            />
+
+    <com.emrg.view.ImageView
+            android:id="@+id/label2"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:src="@drawable/level04_label2"
+            android:scaleType="fitCenter"
+            android:layout_above="@+id/button"
+            android:layout_alignRight="@+id/button"
+            />
+
+    <com.emrg.view.ImageView
+            android:id="@+id/label1"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:src="@drawable/level04_label1"
+            android:layout_above="@+id/floor"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="320px"
+            />
+
+    <com.emerginggames.floors.elevators.Elevator4 android:id="@+id/elevator"
+                                                  android:layout_width="wrap_content"
+                                                  android:layout_height="wrap_content"
+                                                  android:layout_centerHorizontal="true"
+                                                  android:layout_above="@+id/floor"
+                                                  android:layout_marginBottom="-27px"
+                                                  android:layout_alignParentTop="false"
+            />
+
+
+
+</RelativeLayout>

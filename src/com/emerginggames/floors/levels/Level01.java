@@ -1,10 +1,11 @@
 package com.emerginggames.floors.levels;
 
 import android.content.Context;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
+import com.emerginggames.floors.Metrics;
 import com.emerginggames.floors.R;
+import com.emerginggames.floors.elevators.Elevator;
+import com.emrg.view.ImageView;
 
 /**
  * Created with IntelliJ IDEA.
@@ -36,7 +37,15 @@ public class Level01 extends Level {
     @Override
     protected void initView() {
         super.initView();
-        rootView.findViewById(R.id.up_btn).setOnClickListener(controlClickListener);
-        rootView.findViewById(R.id.down_btn).setVisibility(View.INVISIBLE);
+
+        ImageView upBtn = (ImageView)rootView.findViewById(R.id.up_btn);
+        MarginLayoutParams lp = (MarginLayoutParams)upBtn.getLayoutParams();
+        lp.width = (int)(upBtn.getDrawable().getIntrinsicWidth() * Metrics.scale);
+        upBtn.setOnClickListener(controlClickListener);
+
+        ImageView downBtn = (ImageView)rootView.findViewById(R.id.down_btn);
+        lp = (MarginLayoutParams)downBtn.getLayoutParams();
+        lp.width = (int)(downBtn.getDrawable().getIntrinsicWidth() * Metrics.scale);
+        downBtn.setVisibility(View.INVISIBLE);
     }
 }

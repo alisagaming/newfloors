@@ -1,21 +1,20 @@
-package com.emerginggames.floors.levels;
+package com.emerginggames.floors.elevators;
 
 import android.content.Context;
 import android.util.AttributeSet;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
-import android.widget.RelativeLayout;
 import com.emerginggames.floors.R;
 
 /**
  * Created with IntelliJ IDEA.
  * User: babay
- * Date: 25.08.12
- * Time: 13:25
+ * Date: 01.09.12
+ * Time: 19:07
  * To change this template use File | Settings | File Templates.
  */
-public class Elevator extends RelativeLayout {
+public class Elevator1 extends Elevator {
     View leftDoor;
     View rightDoor;
     boolean leftDoorOpen;
@@ -23,57 +22,63 @@ public class Elevator extends RelativeLayout {
     boolean openingLeft;
     boolean openingRight;
 
-    public Elevator(Context context) {
+    public Elevator1(Context context) {
         super(context);
-        inflateView();
     }
 
-    public Elevator(Context context, AttributeSet attrs) {
+    public Elevator1(Context context, AttributeSet attrs) {
         super(context, attrs);
-        inflateView();
     }
 
-    public Elevator(Context context, AttributeSet attrs, int defStyle) {
+    public Elevator1(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
-        inflateView();
     }
 
-    public View getElevatorInnerView(){
-        return findViewById(R.id.elevator_inner);
-    }
-
-    public View getDoorsView(){
-        return findViewById(R.id.elev_doors);
-    }
-
+    @Override
     public boolean isOpen(){
         return leftDoorOpen && rightDoorOpen;
     }
 
+    @Override
     public boolean isOpening(){
         return openingLeft || openingRight;
     }
 
+    @Override
     public void reset(){
         leftDoor.clearAnimation();
         leftDoor.setVisibility(VISIBLE);
         rightDoor.clearAnimation();
         rightDoor.setVisibility(VISIBLE);
         leftDoorOpen = rightDoorOpen = false;
-        findViewById(R.id.elev_doors).setVisibility(View.VISIBLE);
+        getDoorsView().setVisibility(View.VISIBLE);
     }
 
-    void inflateView(){
-        addView(inflate(getContext(), R.layout.partial_elevator, null));
+    @Override
+    public int getLayoutId() {
+        return R.layout.partial_elevator_01;
+    }
+
+    @Override
+    protected void inflateView(){
+        super.inflateView();
         leftDoor = findViewById(R.id.elevator_door_left);
         rightDoor = findViewById(R.id.elevator_door_right);
+
+        scaleImage(R.id.elevator_frame);
+        scaleImage(R.id.elevator_inner_img);
+        scaleImage(R.id.elevator_inner_arrow_up);
+        scalePadding(R.id.elevator_inner_img);
+        scalePadding(R.id.elev_doors);
     }
 
+    @Override
     public void openDoors(){
         openDoorLeft();
         openDoorRight();
     }
 
+    @Override
     public void closeDoors(){
         closeLeftDoor();
         closeRightDor();
@@ -143,4 +148,5 @@ public class Elevator extends RelativeLayout {
         public void onAnimationRepeat(Animation animation) {
         }
     };
+
 }

@@ -3,15 +3,34 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:layout_width="fill_parent"
               android:layout_height="fill_parent">
-    <com.emrg.view.ImageView
-            android:id="@+id/elevator_inner"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/elev_inner"
-            android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"
-            android:paddingBottom="6px"
-            />
+    <RelativeLayout android:id="@+id/elevator_inner"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:paddingBottom="6px"
+            >
+
+        <com.emrg.view.ImageView
+                android:id="@+id/elevator_inner_img"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:scaleType="fitCenter"
+                android:adjustViewBounds="true"
+                android:src="@drawable/elev_inner"
+                />
+
+        <com.emrg.view.ImageView
+                android:id="@+id/elevator_inner_arrow_up"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:scaleType="fitCenter"
+                android:adjustViewBounds="true"
+                android:src="@drawable/elevator_arrow_up"
+                android:layout_centerInParent="true"
+                />
+    </RelativeLayout>
+
 
     <LinearLayout android:id="@+id/elev_doors"
                   android:layout_width="wrap_content" android:layout_height="wrap_content"
@@ -21,11 +40,12 @@
                   android:layout_alignBottom="@+id/elevator_inner"
                   android:orientation="horizontal"
                   android:weightSum="2"
+                  android:paddingBottom="6px"
             >
             <com.emrg.view.ImageView
                     android:id="@+id/elevator_door_left"
                     android:layout_width="0px"
-                    android:layout_height="wrap_content"
+                    android:layout_height="fill_parent"
                     android:layout_weight="1"
                     android:scaleType="fitXY"
                     android:src="@drawable/door_left"
@@ -34,7 +54,7 @@
             <com.emrg.view.ImageView
                     android:id="@+id/elevator_door_right"
                     android:layout_width="0px"
-                    android:layout_height="wrap_content"
+                    android:layout_height="fill_parent"
                     android:layout_weight="1"
                     android:scaleType="fitXY"
                     android:src="@drawable/door_right"
@@ -46,6 +66,8 @@
             android:id="@+id/elevator_frame"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:scaleType="fitCenter"
+            android:adjustViewBounds="true"
             android:src="@drawable/elev_frame"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
