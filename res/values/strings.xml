@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">NewFloors</string>
+    <string name="selectLevel">Select level</string>
+    <string name="start">Start</string>
 </resources>
