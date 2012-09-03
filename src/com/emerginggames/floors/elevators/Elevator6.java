@@ -2,6 +2,7 @@ package com.emerginggames.floors.elevators;
 
 import android.content.Context;
 import android.util.AttributeSet;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
@@ -17,6 +18,12 @@ import com.emerginggames.floors.R;
 public class Elevator6 extends Elevator {
     boolean openingDoors;
     boolean doorsOpen;
+    boolean doorsUnlocked;
+    boolean mTracking;
+    float slideStartPosition;
+    int minPosition;
+    float rightDoorPosition;
+    float leftDoorPosition;
 
     public Elevator6(Context context) {
         super(context);
@@ -37,7 +44,16 @@ public class Elevator6 extends Elevator {
 
     @Override
     public boolean isOpening() {
-        return openingDoors;
+        return doorsUnlocked;
+    }
+
+    public void unlockDoors(){
+        doorsUnlocked = true;
+        findViewById(R.id.item1).setVisibility(GONE);
+        findViewById(R.id.item2).setVisibility(GONE);
+        findViewById(R.id.item3).setVisibility(GONE);
+        findViewById(R.id.item4).setVisibility(GONE);
+        findViewById(R.id.elevator_door_right).setOnTouchListener(doorTouchListener);
     }
 
     @Override
@@ -48,11 +64,18 @@ public class Elevator6 extends Elevator {
         rightDoor.clearAnimation();
         findViewById(R.id.elev_doors).setVisibility(VISIBLE);
         openingDoors = doorsOpen = false;
+        doorsUnlocked = false;
+
+        findViewById(R.id.item1).setVisibility(VISIBLE);
+        findViewById(R.id.item2).setVisibility(VISIBLE);
+        findViewById(R.id.item3).setVisibility(VISIBLE);
+        findViewById(R.id.item4).setVisibility(VISIBLE);
+        findViewById(R.id.elevator_door_right).setOnTouchListener(null);
     }
 
     @Override
     public void openDoors() {
-        View leftDoor = findViewById(R.id.elevator_door_left);
+        /*View leftDoor = findViewById(R.id.elevator_door_left);
         View rightDoor = findViewById(R.id.elevator_door_right);
         leftDoor.clearAnimation();
         Animation anim = AnimationUtils.loadAnimation(getContext(), R.anim.slide_left_full);
@@ -62,7 +85,7 @@ public class Elevator6 extends Elevator {
         anim = AnimationUtils.loadAnimation(getContext(), R.anim.slide_left_double);
         rightDoor.startAnimation(anim);
         anim.setAnimationListener(doorOpenListener);
-        openingDoors = true;
+        openingDoors = true;*/
     }
 
     @Override
@@ -99,7 +122,7 @@ public class Elevator6 extends Elevator {
         return null;
     }
 
-    Animation.AnimationListener doorOpenListener = new Animation.AnimationListener() {
+/*    Animation.AnimationListener doorOpenListener = new Animation.AnimationListener() {
         @Override
         public void onAnimationStart(Animation animation) {}
 
@@ -112,5 +135,59 @@ public class Elevator6 extends Elevator {
 
         @Override
         public void onAnimationRepeat(Animation animation) {}
+    };*/
+
+    void moveDoors(float offset){
+        float newRightPos = rightDoorPosition + offset;
+        if (newRightPos > 0)
+            newRightPos = 0;
+        if (newRightPos < minPosition)
+            newRightPos = minPosition;
+
+
+        float newLeftPos = newRightPos/2;
+
+        int rightDoorDiff = (int)(newRightPos - rightDoorPosition);
+        int leftDoorDiff = (int)(newLeftPos - leftDoorPosition);
+
+        findViewById(R.id.elevator_door_right).offsetLeftAndRight(rightDoorDiff);
+        findViewById(R.id.elevator_door_left).offsetLeftAndRight(leftDoorDiff);
+        rightDoorPosition = rightDoorPosition + rightDoorDiff;
+        leftDoorPosition = leftDoorPosition + leftDoorDiff;
+        findViewById(R.id.elev_doors).invalidate();
+    }
+
+    OnTouchListener doorTouchListener = new OnTouchListener() {
+        @Override
+        public boolean onTouch(View v, MotionEvent event) {
+            if (!doorsUnlocked)
+                return true;
+            switch (event.getAction()){
+                case MotionEvent.ACTION_DOWN:
+                    if(mTracking)
+                        return true;
+                    mTracking = true;
+                    slideStartPosition = event.getX();
+                    minPosition = findViewById(R.id.elevator_door_left).getWidth() * -2;
+                    leftDoorPosition = 0;
+                    rightDoorPosition = 0;
+                    return true;
+                case MotionEvent.ACTION_MOVE:
+                    if (mTracking)
+                        moveDoors(event.getX() - slideStartPosition );
+                    return true;
+                case MotionEvent.ACTION_CANCEL:
+                case MotionEvent.ACTION_UP:
+                    if (!mTracking)
+                        return true;
+                    mTracking = false;
+
+                    if (rightDoorPosition - minPosition <10)
+                        setDoorsOpen(true);
+
+                    return true;
+            }
+            return false;
+        }
     };
 }

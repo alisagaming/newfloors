@@ -35,6 +35,7 @@
         <item name="android:id">@+id/elevator_inner_arrow_up</item>
         <item name="android:src">@drawable/elevator_arrow_up</item>
         <item name="android:layout_centerInParent">true</item>
+        <item name="android:visibility">gone</item>
     </style>
 
 </resources>

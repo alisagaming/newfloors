@@ -17,6 +17,7 @@ import com.emrg.view.ImageView;
  * To change this template use File | Settings | File Templates.
  */
 public abstract class Elevator extends ScaledRelativeLayout {
+    boolean doorsOpen;
 
     public Elevator(Context context) {
         super(context);
@@ -61,9 +62,28 @@ public abstract class Elevator extends ScaledRelativeLayout {
         scaleViews();
     }
 
-    public abstract boolean isOpen();
+    public boolean isOpen(){
+        return doorsOpen;
+    }
+
+    protected void setDoorsOpen(boolean isOpen){
+        doorsOpen = isOpen;
+        if (isOpen){
+            findViewById(R.id.elev_doors).setVisibility(GONE);
+            findViewById(R.id.elevator_inner_arrow_up).setVisibility(VISIBLE);
+        }else {
+            findViewById(R.id.elev_doors).setVisibility(VISIBLE);
+            findViewById(R.id.elevator_inner_arrow_up).setVisibility(GONE);
+        }
+
+    }
+
+    public void reset(){
+        setDoorsOpen(false);
+    }
+
     public abstract boolean isOpening();
-    public abstract void reset();
+
 
     public abstract void openDoors();
     public abstract void closeDoors();

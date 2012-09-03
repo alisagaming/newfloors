@@ -19,16 +19,23 @@
                              android:src="@drawable/level6_floor"
             />
 
-
-
     <com.emerginggames.floors.elevators.Elevator6 android:id="@+id/elevator"
                                                   android:layout_width="wrap_content"
                                                   android:layout_height="wrap_content"
                                                   android:layout_centerHorizontal="true"
                                                   android:layout_above="@+id/floor"
-                                                  android:layout_marginBottom="-27px"
+
                                                   android:layout_alignParentTop="false"
             />
+
+    <com.emrg.view.ImageView android:id="@+id/arrow"
+        style="@style/ScaleImage"
+        android:src="@drawable/level6_arrow"
+        android:layout_above="@+id/floor"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="32px"
+        android:layout_marginBottom="128px"
+        />
 
 
 

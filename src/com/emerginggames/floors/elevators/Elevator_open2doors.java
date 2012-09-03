@@ -13,8 +13,6 @@ import com.emrg.view.ImageView;
  * To change this template use File | Settings | File Templates.
  */
 public abstract class Elevator_open2doors extends Elevator {
-    boolean isOpen;
-
     public Elevator_open2doors(Context context) {
         super(context);
     }
@@ -28,17 +26,13 @@ public abstract class Elevator_open2doors extends Elevator {
     }
 
     @Override
-    public boolean isOpen() {
-        return isOpen;
-    }
-
-    @Override
     public boolean isOpening() {
         return false;
     }
 
     @Override
     public void reset() {
+        super.reset();
         closeDoors();
     }
 
@@ -75,7 +69,7 @@ public abstract class Elevator_open2doors extends Elevator {
         findViewById(R.id.elevator_door_right).setVisibility(INVISIBLE);
         findViewById(R.id.elevator_door_left_open).setVisibility(VISIBLE);
         findViewById(R.id.elevator_door_right_open).setVisibility(VISIBLE);
-        isOpen = true;
+        setDoorsOpen(true);
     }
 
     @Override
@@ -84,8 +78,12 @@ public abstract class Elevator_open2doors extends Elevator {
         findViewById(R.id.elevator_door_right).setVisibility(VISIBLE);
         findViewById(R.id.elevator_door_left_open).setVisibility(INVISIBLE);
         findViewById(R.id.elevator_door_right_open).setVisibility(INVISIBLE);
-        isOpen = false;
+        setDoorsOpen(false);
     }
 
-
+    @Override
+    protected void setDoorsOpen(boolean isOpen) {
+        doorsOpen = isOpen;
+        findViewById(R.id.elevator_inner_arrow_up).setVisibility(isOpen? VISIBLE : GONE);
+    }
 }

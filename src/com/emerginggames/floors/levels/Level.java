@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.RelativeLayout;
 import com.emerginggames.floors.Metrics;
 import com.emerginggames.floors.R;
+import com.emerginggames.floors.Settings;
 import com.emerginggames.floors.elevators.Elevator;
 import com.emerginggames.floors.model.Item;
 import com.emrg.view.ImageView;
@@ -56,7 +57,8 @@ public abstract class Level extends RelativeLayout {
     void setControl(View v, int n){
         v.setTag(n);
         v.setOnClickListener(controlClickListener);
-        v.setSoundEffectsEnabled(false);
+        if (!Settings.DEBUG)
+            v.setSoundEffectsEnabled(false);
     }
 
     void scaleView(int id){

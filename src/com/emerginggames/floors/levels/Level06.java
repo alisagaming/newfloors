@@ -3,6 +3,7 @@ package com.emerginggames.floors.levels;
 import android.content.Context;
 import android.view.View;
 import com.emerginggames.floors.R;
+import com.emerginggames.floors.Settings;
 import com.emerginggames.floors.elevators.Elevator6;
 
 /**
@@ -31,8 +32,11 @@ public class Level06 extends Level {
         }
 
         lastClickedItem = n;
-        if (n == 4)
-            elevator.openDoors();
+        if (n == 4){
+            ((Elevator6)elevator).unlockDoors();
+            if (Settings.DEBUG)
+                findViewById(R.id.arrow).setVisibility(VISIBLE);
+        }
     }
 
     @Override
@@ -48,6 +52,8 @@ public class Level06 extends Level {
         setControl(elev.getItem(2), 2);
         setControl(elev.getItem(3), 3);
         setControl(elev.getItem(4), 4);
+        scaleImageSize(R.id.arrow);
+        scaleMargins(R.id.arrow);
     }
 
     @Override
@@ -55,5 +61,7 @@ public class Level06 extends Level {
         super.start();
         lastClickedItem = 0;
         failed = false;
+        if (Settings.DEBUG)
+            findViewById(R.id.arrow).setVisibility(GONE);
     }
 }

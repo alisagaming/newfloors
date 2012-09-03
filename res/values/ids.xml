@@ -1,0 +1,4 @@
+<resources>
+    <item type="id" name="elevator_inner_img"/>
+    <item type="id" name="elevator_inner_arrow_up"/>
+</resources>

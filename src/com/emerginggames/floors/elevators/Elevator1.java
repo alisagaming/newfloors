@@ -35,23 +35,18 @@ public class Elevator1 extends Elevator {
     }
 
     @Override
-    public boolean isOpen(){
-        return leftDoorOpen && rightDoorOpen;
-    }
-
-    @Override
     public boolean isOpening(){
         return openingLeft || openingRight;
     }
 
     @Override
     public void reset(){
+        super.reset();
         leftDoor.clearAnimation();
         leftDoor.setVisibility(VISIBLE);
         rightDoor.clearAnimation();
         rightDoor.setVisibility(VISIBLE);
         leftDoorOpen = rightDoorOpen = false;
-        getDoorsView().setVisibility(View.VISIBLE);
     }
 
     @Override
@@ -126,8 +121,8 @@ public class Elevator1 extends Elevator {
             leftDoor.setVisibility(View.INVISIBLE);
             leftDoorOpen = true;
             openingLeft =false;
-            if (isOpen())
-                findViewById(R.id.elev_doors).setVisibility(View.GONE);
+            if (rightDoorOpen)
+                setDoorsOpen(true);
         }
 
         @Override
@@ -143,8 +138,8 @@ public class Elevator1 extends Elevator {
             rightDoor.setVisibility(View.INVISIBLE);
             rightDoorOpen = true;
             openingRight =false;
-            if (isOpen())
-                findViewById(R.id.elev_doors).setVisibility(View.GONE);
+            if (leftDoorOpen)
+                setDoorsOpen(true);
         }
 
         @Override

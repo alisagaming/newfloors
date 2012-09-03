@@ -9,24 +9,8 @@
                     android:layout_centerInParent="true"
             >
 
-        <com.emrg.view.ImageView
-                android:id="@+id/elevator_inner_img"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:scaleType="fitCenter"
-                android:adjustViewBounds="true"
-                android:src="@drawable/elev_inner"
-                />
-
-        <com.emrg.view.ImageView
-                android:id="@+id/elevator_inner_arrow_up"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:scaleType="fitCenter"
-                android:adjustViewBounds="true"
-                android:src="@drawable/elevator_arrow_up"
-                android:layout_centerInParent="true"
-                />
+        <com.emrg.view.ImageView style="@style/ElevatorInnerImg"/>
+        <com.emrg.view.ImageView style="@style/ElevatorInnerArrowUp"/>
     </RelativeLayout>
 
     <com.emrg.view.ImageView
