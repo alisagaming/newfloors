@@ -67,7 +67,7 @@ public class Level05 extends Level {
         scaleImageSize(R.id.button);
         scaleMargins(R.id.button);
 
-        setClicableElement(R.id.button);
+        setControl(R.id.button);
     }
 
     void setBarPosition(float position) {

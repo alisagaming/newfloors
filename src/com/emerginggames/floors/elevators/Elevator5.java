@@ -36,8 +36,8 @@ public class Elevator5 extends Elevator_open2doors {
     }
 
     @Override
-    protected void inflateView() {
-        super.inflateView();
+    protected void scaleViews() {
+        super.scaleViews();
         setScaledMargin(R.id.elevator_door_left_open, 0, 0, -2, 0);
         setScaledMargin(R.id.elevator_door_right_open, -2, 0, 0, 0);
         findViewById(R.id.elevator_frame).setPadding(0, (int)(15 * Metrics.scale), 0, 0);

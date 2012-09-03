@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+        >
+    <RelativeLayout android:id="@+id/elevator_inner"
+                    style="@style/WrapContentCenterHoriz"
+                    android:layout_marginTop="15px">
+        <com.emrg.view.ImageView style="@style/ElevatorInnerImg"/>
+        <com.emrg.view.ImageView style="@style/ElevatorInnerArrowUp"/>
+    </RelativeLayout>
+
+    <RelativeLayout android:id="@+id/elev_doors"
+                    style="@style/WrapContentCenterHoriz"
+                    android:layout_alignBottom="@+id/elevator_inner">
+
+        <com.emrg.view.ImageView android:id="@+id/elevator_door_left"
+                                 android:src="@drawable/elev6_door_l" style="@style/ScaleImage"/>
+
+        <com.emrg.view.ImageView android:id="@+id/elevator_door_right"
+                                 style="@style/ScaleImage"
+                                 android:src="@drawable/elev6_door_r"
+                                 android:layout_toRightOf="@+id/elevator_door_left"/>
+
+        <LinearLayout android:layout_width="wrap_content" android:layout_height="fill_parent"
+                      android:orientation="vertical"
+                      android:layout_alignLeft="@+id/elevator_door_left"
+                      android:layout_alignRight="@+id/elevator_door_left"
+                      android:layout_alignBottom="@+id/elevator_door_left"
+                      android:layout_alignTop="@+id/elevator_door_left"
+                >
+            <View android:id="@+id/item1" style="@style/VerticalWeight1"/>
+            <View android:id="@+id/item3" style="@style/VerticalWeight1"/>
+        </LinearLayout>
+
+        <LinearLayout android:layout_width="wrap_content" android:layout_height="fill_parent"
+                      android:orientation="vertical"
+                      android:layout_alignLeft="@+id/elevator_door_right"
+                      android:layout_alignRight="@+id/elevator_door_right"
+                      android:layout_alignBottom="@+id/elevator_door_right"
+                      android:layout_alignTop="@+id/elevator_door_right"
+                >
+            <View android:id="@+id/item2" style="@style/VerticalWeight1"/>
+            <View android:id="@+id/item4" style="@style/VerticalWeight1"/>
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <com.emrg.view.ImageView android:id="@+id/elevator_frame"
+                             style="@style/ScaleImageCenterHoriz"
+                             android:src="@drawable/elevator6_frame"/>
+
+</RelativeLayout>

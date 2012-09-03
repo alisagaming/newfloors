@@ -51,9 +51,7 @@ public abstract class Elevator_open2doors extends Elevator {
     protected abstract int[] getImageIdArray();
 
     @Override
-    protected void inflateView() {
-        super.inflateView();
-
+    protected void scaleViews() {
         int[] imageIds = getImageIdArray();
 
         setImageAndScale(R.id.elevator_frame, imageIds[0]);

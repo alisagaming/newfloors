@@ -33,7 +33,7 @@ public class Level04 extends Level {
     @Override
     protected void initView() {
         super.initView();
-        setClicableElement(R.id.button);
+        setControl(R.id.button);
 
         scaleImageSize(R.id.button);
         scaleMargins(R.id.button);

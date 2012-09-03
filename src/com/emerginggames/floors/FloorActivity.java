@@ -39,14 +39,12 @@ public class FloorActivity extends Activity {
         Metrics.setSizeFromView(getWindow().getDecorView());
         prefs = Preferences.getInstance(getApplicationContext());
 
-        prefs.setCurrentLevel(5);
+        //prefs.setCurrentLevel(1);
         startLevel(prefs.getCurrentLevel());
 
-        int levelTopMargin = (int)(- ( 854 * Metrics.scale - Metrics.height)/2);
+        int levelTopMargin = (int)(- ( 854 * Metrics.scale - Metrics.height));
         if (levelTopMargin < 0 )
             ((ViewGroup.MarginLayoutParams)(findViewById(R.id.levelCont).getLayoutParams())).topMargin = levelTopMargin;
-
-
     }
 
     @Override

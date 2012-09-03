@@ -64,7 +64,10 @@ public class Elevator1 extends Elevator {
         super.inflateView();
         leftDoor = findViewById(R.id.elevator_door_left);
         rightDoor = findViewById(R.id.elevator_door_right);
+    }
 
+    @Override
+    protected void scaleViews() {
         scaleImage(R.id.elevator_frame);
         scaleImage(R.id.elevator_inner_img);
         scaleImage(R.id.elevator_inner_arrow_up);
@@ -86,7 +89,7 @@ public class Elevator1 extends Elevator {
 
     public void openDoorLeft(){
         leftDoor.clearAnimation();
-        Animation anim = AnimationUtils.loadAnimation(getContext(), R.anim.left_door_open);
+        Animation anim = AnimationUtils.loadAnimation(getContext(), R.anim.slide_left_full);
         anim.setAnimationListener(leftDoorOpenListener);
         leftDoor.startAnimation(anim);
         openingLeft = true;
@@ -94,7 +97,7 @@ public class Elevator1 extends Elevator {
 
     public void openDoorRight(){
         rightDoor.clearAnimation();
-        Animation anim = AnimationUtils.loadAnimation(getContext(), R.anim.right_door_open);
+        Animation anim = AnimationUtils.loadAnimation(getContext(), R.anim.slide_right_full);
         anim.setAnimationListener(rightDoorOpenListener);
         rightDoor.startAnimation(anim);
         openingRight = true;

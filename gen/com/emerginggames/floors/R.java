@@ -11,14 +11,15 @@ public final class R {
     public static final class anim {
         public static final int dialog_enter=0x7f040000;
         public static final int dialog_overshoot=0x7f040001;
-        public static final int left_door_open=0x7f040002;
-        public static final int move_level_down=0x7f040003;
-        public static final int move_level_from_up=0x7f040004;
-        public static final int right_door_open=0x7f040005;
-        public static final int slide_in_left=0x7f040006;
-        public static final int slide_in_right=0x7f040007;
-        public static final int slide_out_left=0x7f040008;
-        public static final int slide_out_right=0x7f040009;
+        public static final int move_level_down=0x7f040002;
+        public static final int move_level_from_up=0x7f040003;
+        public static final int slide_right_full =0x7f040004;
+        public static final int slide_in_left=0x7f040005;
+        public static final int slide_in_right=0x7f040006;
+        public static final int slide_left_double=0x7f040007;
+        public static final int slide_left_full=0x7f040008;
+        public static final int slide_out_left=0x7f040009;
+        public static final int slide_out_right=0x7f04000a;
     }
     public static final class attr {
     }
@@ -35,41 +36,46 @@ public final class R {
         public static final int elev5_door_l_open=0x7f020009;
         public static final int elev5_door_r=0x7f02000a;
         public static final int elev5_door_r_open=0x7f02000b;
-        public static final int elev_frame=0x7f02000c;
-        public static final int elev_inner=0x7f02000d;
-        public static final int elevator5_frame=0x7f02000e;
-        public static final int elevator_arrow_up=0x7f02000f;
-        public static final int fl1_floor=0x7f020010;
-        public static final int fl1_wall=0x7f020011;
-        public static final int fl2_floor=0x7f020012;
-        public static final int fl2_key=0x7f020013;
-        public static final int fl2_tool_key=0x7f020014;
-        public static final int fl2_wall=0x7f020015;
-        public static final int fl3_note_large=0x7f020016;
-        public static final int fl3_tool_note=0x7f020017;
-        public static final int fl3_wall_note=0x7f020018;
-        public static final int icon=0x7f020019;
-        public static final int level04_button=0x7f02001a;
-        public static final int level04_label1=0x7f02001b;
-        public static final int level04_label2=0x7f02001c;
-        public static final int level05_button=0x7f02001d;
-        public static final int level4_btn=0x7f02001e;
-        public static final int level4_btn_pressed=0x7f02001f;
-        public static final int level4_floor=0x7f020020;
-        public static final int level4_wall=0x7f020021;
-        public static final int level5_btn=0x7f020022;
-        public static final int level5_btn_pressed=0x7f020023;
-        public static final int level5_floor=0x7f020024;
-        public static final int level5_indicator_back=0x7f020025;
-        public static final int level5_indicator_fill=0x7f020026;
-        public static final int level5_wall=0x7f020027;
-        public static final int menu_button=0x7f020028;
-        public static final int restart_button=0x7f020029;
-        public static final int snappers_banner=0x7f02002a;
-        public static final int toolbar=0x7f02002b;
-        public static final int toolbar_cell=0x7f02002c;
-        public static final int toolbar_cell_2state=0x7f02002d;
-        public static final int up_btn_green=0x7f02002e;
+        public static final int elev6_door_l=0x7f02000c;
+        public static final int elev6_door_r=0x7f02000d;
+        public static final int elev_frame=0x7f02000e;
+        public static final int elev_inner=0x7f02000f;
+        public static final int elevator5_frame=0x7f020010;
+        public static final int elevator6_frame=0x7f020011;
+        public static final int elevator_arrow_up=0x7f020012;
+        public static final int fl1_floor=0x7f020013;
+        public static final int fl1_wall=0x7f020014;
+        public static final int fl2_floor=0x7f020015;
+        public static final int fl2_key=0x7f020016;
+        public static final int fl2_tool_key=0x7f020017;
+        public static final int fl2_wall=0x7f020018;
+        public static final int fl3_note_large=0x7f020019;
+        public static final int fl3_tool_note=0x7f02001a;
+        public static final int fl3_wall_note=0x7f02001b;
+        public static final int icon=0x7f02001c;
+        public static final int level04_button=0x7f02001d;
+        public static final int level04_label1=0x7f02001e;
+        public static final int level04_label2=0x7f02001f;
+        public static final int level05_button=0x7f020020;
+        public static final int level4_btn=0x7f020021;
+        public static final int level4_btn_pressed=0x7f020022;
+        public static final int level4_floor=0x7f020023;
+        public static final int level4_wall=0x7f020024;
+        public static final int level5_btn=0x7f020025;
+        public static final int level5_btn_pressed=0x7f020026;
+        public static final int level5_floor=0x7f020027;
+        public static final int level5_indicator_back=0x7f020028;
+        public static final int level5_indicator_fill=0x7f020029;
+        public static final int level5_wall=0x7f02002a;
+        public static final int level6_floor=0x7f02002b;
+        public static final int level6_wall=0x7f02002c;
+        public static final int menu_button=0x7f02002d;
+        public static final int restart_button=0x7f02002e;
+        public static final int snappers_banner=0x7f02002f;
+        public static final int toolbar=0x7f020030;
+        public static final int toolbar_cell=0x7f020031;
+        public static final int toolbar_cell_2state=0x7f020032;
+        public static final int up_btn_green=0x7f020033;
     }
     public static final class id {
         public static final int banner=0x7f070002;
@@ -85,14 +91,18 @@ public final class R {
         public static final int elev_doors=0x7f07001a;
         public static final int elevator=0x7f07000b;
         public static final int elevator_door_left=0x7f07001b;
-        public static final int elevator_door_left_open=0x7f07001e;
+        public static final int elevator_door_left_open=0x7f070022;
         public static final int elevator_door_right=0x7f07001c;
-        public static final int elevator_door_right_open=0x7f07001f;
+        public static final int elevator_door_right_open=0x7f070023;
         public static final int elevator_frame=0x7f07001d;
         public static final int elevator_inner=0x7f070017;
         public static final int elevator_inner_arrow_up=0x7f070019;
         public static final int elevator_inner_img=0x7f070018;
         public static final int floor=0x7f07000a;
+        public static final int item1=0x7f07001e;
+        public static final int item2=0x7f070020;
+        public static final int item3=0x7f07001f;
+        public static final int item4=0x7f070021;
         public static final int key=0x7f07000e;
         public static final int label1=0x7f070013;
         public static final int label2=0x7f070012;
@@ -112,16 +122,24 @@ public final class R {
         public static final int level_03=0x7f030003;
         public static final int level_04=0x7f030004;
         public static final int level_05=0x7f030005;
-        public static final int partial_elevator_01=0x7f030006;
-        public static final int partial_elevator_2dors_open=0x7f030007;
+        public static final int level_06=0x7f030006;
+        public static final int partial_elevator_01=0x7f030007;
+        public static final int partial_elevator_06=0x7f030008;
+        public static final int partial_elevator_2dors_open=0x7f030009;
     }
     public static final class string {
         public static final int app_name=0x7f050000;
     }
     public static final class style {
-        public static final int Animation_CustomAnimation=0x7f060002;
-        public static final int Animation_DialogAnimation=0x7f060003;
-        public static final int appTheme=0x7f060001;
+        public static final int Animation_CustomAnimation=0x7f060008;
+        public static final int Animation_DialogAnimation=0x7f060009;
+        public static final int ElevatorInnerArrowUp=0x7f060006;
+        public static final int ElevatorInnerImg=0x7f060005;
+        public static final int ScaleImage=0x7f060002;
+        public static final int ScaleImageCenterHoriz=0x7f060003;
+        public static final int VerticalWeight1=0x7f060004;
+        public static final int WrapContentCenterHoriz=0x7f060001;
+        public static final int appTheme=0x7f060007;
         public static final int toolbarCell=0x7f060000;
     }
 }

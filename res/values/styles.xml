@@ -8,4 +8,33 @@
         <item name="android:onClick">OnCellClick</item>
         <item name="android:padding">6dp</item>
     </style>
+    <style name="WrapContentCenterHoriz">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_centerHorizontal">true</item>
+    </style>
+    <style name="ScaleImage">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:scaleType">fitCenter</item>
+        <item name="android:adjustViewBounds">true</item>
+    </style>
+    <style name="ScaleImageCenterHoriz" parent="ScaleImage">
+        <item name="android:layout_centerHorizontal">true</item>
+    </style>
+    <style name="VerticalWeight1">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">0px</item>
+        <item name="android:layout_weight">1</item>
+    </style>
+    <style name="ElevatorInnerImg" parent="ScaleImage">
+        <item name="android:id">@+id/elevator_inner_img</item>
+        <item name="android:src">@drawable/elev_inner</item>
+    </style>
+    <style name="ElevatorInnerArrowUp" parent="ScaleImage">
+        <item name="android:id">@+id/elevator_inner_arrow_up</item>
+        <item name="android:src">@drawable/elevator_arrow_up</item>
+        <item name="android:layout_centerInParent">true</item>
+    </style>
+
 </resources>

@@ -49,8 +49,14 @@ public abstract class Level extends RelativeLayout {
         }
     }
 
-    void setClicableElement(int id){
+    void setControl(int id){
         rootView.findViewById(id).setOnClickListener(controlClickListener);
+    }
+
+    void setControl(View v, int n){
+        v.setTag(n);
+        v.setOnClickListener(controlClickListener);
+        v.setSoundEffectsEnabled(false);
     }
 
     void scaleView(int id){

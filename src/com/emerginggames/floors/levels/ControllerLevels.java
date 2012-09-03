@@ -22,6 +22,8 @@ public class ControllerLevels {
                 return new Level04(levelListener, context);
             case 5:
                 return new Level05(levelListener, context);
+            case 6:
+                return new Level06(levelListener, context);
             default:
                 return null;
         }
