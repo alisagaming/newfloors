@@ -37,15 +37,13 @@ public class Level01 extends Level {
     @Override
     protected void initView() {
         super.initView();
+        findViewById(R.id.up_btn).setOnClickListener(controlClickListener);
+        findViewById(R.id.down_btn).setVisibility(View.INVISIBLE);
+    }
 
-        ImageView upBtn = (ImageView)rootView.findViewById(R.id.up_btn);
-        MarginLayoutParams lp = (MarginLayoutParams)upBtn.getLayoutParams();
-        lp.width = (int)(upBtn.getDrawable().getIntrinsicWidth() * Metrics.scale);
-        upBtn.setOnClickListener(controlClickListener);
-
-        ImageView downBtn = (ImageView)rootView.findViewById(R.id.down_btn);
-        lp = (MarginLayoutParams)downBtn.getLayoutParams();
-        lp.width = (int)(downBtn.getDrawable().getIntrinsicWidth() * Metrics.scale);
-        downBtn.setVisibility(View.INVISIBLE);
+    @Override
+    protected void scaleViews() {
+        scaleImageSize(R.id.up_btn);
+        scaleImageSize(R.id.down_btn);
     }
 }

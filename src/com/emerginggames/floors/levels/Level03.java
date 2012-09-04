@@ -43,13 +43,16 @@ public class Level03 extends Level {
     @Override
     protected void initView() {
         super.initView();
-        rootView.findViewById(R.id.note_large).setOnClickListener(new OnClickListener() {
+        findViewById(R.id.note_large).setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
                 findViewById(R.id.note_large).setVisibility(GONE);
             }
         });
+    }
 
+    @Override
+    protected void scaleViews() {
         scaleImageSize(R.id.up_btn);
         scaleImageSize(R.id.down_btn);
 
@@ -61,8 +64,10 @@ public class Level03 extends Level {
 
     @Override
     public void itemSelected(Item item) {
-        levelListener.resetCurrentItem();
-        findViewById(R.id.note_large).setVisibility(VISIBLE);
+        if (item != null){
+            levelListener.resetCurrentItem();
+            findViewById(R.id.note_large).setVisibility(VISIBLE);
+        }
     }
 
     @Override
@@ -102,7 +107,7 @@ public class Level03 extends Level {
             mAccelCurrent = (float) Math.sqrt((double) (x*x + y*y + z*z));
             float delta = mAccelCurrent - mAccelLast;
             mAccel = mAccel * 0.9f + delta; // perform low-cut filter
-            if (mAccel > 4)
+            if (mAccel > 3)
                 onShake();
         }
 

@@ -48,6 +48,8 @@ public abstract class ScaledRelativeLayout extends RelativeLayout {
 
     protected void scaleImage(int id) {
         ImageView image = (ImageView) findViewById(id);
+        if (image.getDrawable() == null)
+            return;
         MarginLayoutParams lp = (MarginLayoutParams) image.getLayoutParams();
         lp.width = (int) (image.getDrawable().getIntrinsicWidth() * Metrics.scale);
         lp.height = (int) (image.getDrawable().getIntrinsicHeight() * Metrics.scale);

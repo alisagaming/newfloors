@@ -42,16 +42,19 @@ public class Level02 extends Level {
     protected void initView() {
         super.initView();
         elevator.getDoorsView().setOnClickListener(controlClickListener);
-
-        scaleImageSize(R.id.up_btn);
-        scaleImageSize(R.id.down_btn);
-
-        scaleImageSize(R.id.key);
-        scaleMargins(R.id.key, true, false, false, true);
     }
 
     @Override
     public void start() {
         super.start();
+    }
+
+    @Override
+    protected void scaleViews() {
+        scaleImageSize(R.id.up_btn);
+        scaleImageSize(R.id.down_btn);
+
+        scaleImageSize(R.id.key);
+        scaleMargins(R.id.key);
     }
 }

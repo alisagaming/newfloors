@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res/com.emerginggames.floors"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
 
@@ -46,13 +47,20 @@
             android:layout_marginRight="20px"
             />
 
-    <com.emerginggames.floors.elevators.Elevator5 android:id="@+id/elevator"
+    <com.emerginggames.floors.elevators.Elevator_open2doors android:id="@+id/elevator"
                                                   android:layout_width="wrap_content"
                                                   android:layout_height="wrap_content"
                                                   android:layout_centerHorizontal="true"
                                                   android:layout_above="@+id/floor"
                                                   android:layout_marginBottom="-27px"
                                                   android:layout_alignParentTop="false"
+                                                  app:frameMarginTop="15px"
+                                                  app:frame="@drawable/elevator5_frame"
+                                                  app:leftDoor="@drawable/elev5_door_l"
+                                                  app:rightDoor="@drawable/elev5_door_r"
+                                                  app:leftDoorOpen="@drawable/elev5_door_l_open"
+                                                  app:rightDoorOpen="@drawable/elev5_door_r_open"
+                                                  app:openDoorMargin="-2px"
             />
 
 

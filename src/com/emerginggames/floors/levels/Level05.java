@@ -15,7 +15,7 @@ import com.emerginggames.floors.R;
 public class Level05 extends Level {
     private static final int UPDATE_INTERVAL = 50;
     private static final float UPDATE_DECREASE_STEP = 0.01f;
-    private static final float BAR_INCREASE_STEP = 0.05f;
+    private static final float BAR_INCREASE_STEP = 0.07f;
     float currentBarPosition;
     boolean shouldRun;
     boolean running;
@@ -57,7 +57,10 @@ public class Level05 extends Level {
     @Override
     protected void initView() {
         super.initView();
+    }
 
+    @Override
+    protected void scaleViews() {
         scaleView(R.id.bar);
         scaleMargins(R.id.bar);
         scalePaddings(R.id.bar);
@@ -71,8 +74,8 @@ public class Level05 extends Level {
     }
 
     void setBarPosition(float position) {
-        int maxWidth = rootView.findViewById(R.id.bar_fill).getWidth();
-        View bar = rootView.findViewById(R.id.bar_inner);
+        int maxWidth = findViewById(R.id.bar_fill).getWidth();
+        View bar = findViewById(R.id.bar_inner);
         ViewGroup.LayoutParams lp = bar.getLayoutParams();
         lp.width = (int) (maxWidth * position);
         bar.setLayoutParams(lp);

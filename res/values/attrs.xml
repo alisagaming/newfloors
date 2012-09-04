@@ -1,0 +1,12 @@
+<resources>
+    <declare-styleable name="Elevator_open2doors">
+        <attr name="frame" format="reference"/>
+        <attr name="leftDoor" format="reference"/>
+        <attr name="rightDoor" format="reference"/>
+        <attr name="leftDoorOpen" format="reference"/>
+        <attr name="rightDoorOpen" format="reference"/>
+        <attr name="openDoorMargin" format="dimension"/>
+        <attr name="frameMarginTop" format="dimension"/>
+        <attr name="innerPaddingBottom" format="dimension"/>
+    </declare-styleable>
+</resources>

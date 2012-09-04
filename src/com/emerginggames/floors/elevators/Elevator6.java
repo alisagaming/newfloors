@@ -17,7 +17,6 @@ import com.emerginggames.floors.R;
  */
 public class Elevator6 extends Elevator {
     boolean openingDoors;
-    boolean doorsOpen;
     boolean doorsUnlocked;
     boolean mTracking;
     float slideStartPosition;
@@ -31,15 +30,6 @@ public class Elevator6 extends Elevator {
 
     public Elevator6(Context context, AttributeSet attrs) {
         super(context, attrs);
-    }
-
-    public Elevator6(Context context, AttributeSet attrs, int defStyle) {
-        super(context, attrs, defStyle);
-    }
-
-    @Override
-    public boolean isOpen() {
-        return doorsOpen;
     }
 
     @Override

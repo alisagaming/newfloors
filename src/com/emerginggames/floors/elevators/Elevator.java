@@ -24,21 +24,19 @@ public abstract class Elevator extends ScaledRelativeLayout {
         if (Metrics.scale == 0)
             Metrics.setSizeFromView(this);
         inflateView();
+        scaleViews();
     }
 
     public Elevator(Context context, AttributeSet attrs) {
         super(context, attrs);
         if (Metrics.scale == 0)
             Metrics.setSizeFromView(this);
+        parseAttributes(attrs);
         inflateView();
+        scaleViews();
     }
 
-    public Elevator(Context context, AttributeSet attrs, int defStyle) {
-        super(context, attrs, defStyle);
-        if (Metrics.scale == 0)
-            Metrics.setSizeFromView(this);
-        inflateView();
-    }
+    void parseAttributes(AttributeSet attrs){}
 
     public View getElevatorInnerView(){
         return findViewById(R.id.elevator_inner);
@@ -59,8 +57,9 @@ public abstract class Elevator extends ScaledRelativeLayout {
 
     protected void inflateView(){
         addView(inflate(getContext(), getLayoutId(), null));
-        scaleViews();
     }
+
+
 
     public boolean isOpen(){
         return doorsOpen;
@@ -80,6 +79,18 @@ public abstract class Elevator extends ScaledRelativeLayout {
 
     public void reset(){
         setDoorsOpen(false);
+    }
+
+    public void debug(){
+        findViewById(R.id.elev_doors).setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (isOpen())
+                    closeDoors();
+                else
+                    openDoors();
+            }
+        });
     }
 
     public abstract boolean isOpening();

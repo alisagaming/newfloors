@@ -22,7 +22,6 @@ import com.emrg.view.ImageView;
  */
 public abstract class Level extends RelativeLayout {
     LevelListener levelListener;
-    protected ViewGroup rootView;
     Context context;
     Elevator elevator;
     SparseArray<Item> items;
@@ -32,7 +31,7 @@ public abstract class Level extends RelativeLayout {
         this.levelListener = levelListener;
         this.context = context;
         initView();
-        addView(rootView);
+        scaleViews();
     }
 
     public void initItems() {
@@ -42,7 +41,7 @@ public abstract class Level extends RelativeLayout {
             for (int i = 0; i < items.size(); i++) {
                 viewId = items.keyAt(i);
                 item = items.valueAt(i);
-                View itemView = rootView.findViewById(viewId);
+                View itemView = findViewById(viewId);
                 itemView.setTag(item);
                 itemView.setOnClickListener(itemClickListener);
                 itemView.setVisibility(VISIBLE);
@@ -51,7 +50,7 @@ public abstract class Level extends RelativeLayout {
     }
 
     void setControl(int id){
-        rootView.findViewById(id).setOnClickListener(controlClickListener);
+        findViewById(id).setOnClickListener(controlClickListener);
     }
 
     void setControl(View v, int n){
@@ -62,7 +61,7 @@ public abstract class Level extends RelativeLayout {
     }
 
     void scaleView(int id){
-        ViewGroup.LayoutParams lp = rootView.findViewById(id).getLayoutParams();
+        ViewGroup.LayoutParams lp = findViewById(id).getLayoutParams();
         if (lp.width >0)
             lp.width = (int)(lp.width * Metrics.scale);
         if (lp.height >0)
@@ -70,14 +69,14 @@ public abstract class Level extends RelativeLayout {
     }
 
     void scaleImageSize(int id) {
-        ImageView image = (ImageView) rootView.findViewById(id);
+        ImageView image = (ImageView) findViewById(id);
         MarginLayoutParams lp = (MarginLayoutParams) image.getLayoutParams();
         lp.width = (int) (image.getDrawable().getIntrinsicWidth() * Metrics.scale);
         lp.height = (int) (image.getDrawable().getIntrinsicHeight() * Metrics.scale);
     }
 
     void scaleMargins(int id) {
-        View v = rootView.findViewById(id);
+        View v = findViewById(id);
         MarginLayoutParams lp = (MarginLayoutParams) v.getLayoutParams();
         lp.leftMargin = (int) (lp.leftMargin * Metrics.scale);
         lp.topMargin = (int) (lp.topMargin * Metrics.scale);
@@ -86,7 +85,7 @@ public abstract class Level extends RelativeLayout {
     }
 
     void scaleMargins(int id, boolean adjustLeftMargin, boolean adjustTopMargin, boolean adjustRightMargin, boolean adjustBottomMargin) {
-        View v = rootView.findViewById(id);
+        View v = findViewById(id);
         MarginLayoutParams lp = (MarginLayoutParams) v.getLayoutParams();
         if (adjustLeftMargin)
             lp.leftMargin = (int) (lp.leftMargin * Metrics.scale);
@@ -99,7 +98,7 @@ public abstract class Level extends RelativeLayout {
     }
 
     void scalePaddings(int id) {
-        View v = rootView.findViewById(id);
+        View v = findViewById(id);
         float scale = Metrics.scale;
         v.setPadding((int) (v.getPaddingLeft() * scale), (int) (v.getPaddingTop() * scale), (int) (v.getPaddingRight() * scale), (int) (v.getPaddingBottom() * scale));
     }
@@ -122,22 +121,25 @@ public abstract class Level extends RelativeLayout {
 
     protected void initView() {
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        rootView = (ViewGroup) inflater.inflate(getLevelLayoutId(), null);
-        elevator = ((Elevator) rootView.findViewById(R.id.elevator));
+        addView(inflater.inflate(getLevelLayoutId(), null));
+        elevator = ((Elevator) findViewById(R.id.elevator));
         elevator.getElevatorInnerView().setOnClickListener(elevatorDoneListener);
         MarginLayoutParams lp = (MarginLayoutParams) elevator.getLayoutParams();
         lp.bottomMargin = (int) (lp.bottomMargin * Metrics.scale);
+
     }
 
     protected void onItemClickListener(View itemView) {
         levelListener.addItem((Item) itemView.getTag());
         itemView.setVisibility(GONE);
+        itemView.setOnClickListener(null);
     }
-
 
     protected abstract void onElementClicked(View elementView);
 
     protected abstract int getLevelLayoutId();
+
+    protected abstract void scaleViews();
 
 
     protected View.OnClickListener itemClickListener = new View.OnClickListener() {
@@ -172,5 +174,7 @@ public abstract class Level extends RelativeLayout {
         void resetCurrentItem();
 
         void levelComplete();
+
+        int getCoveredBottomHeight();
     }
 }

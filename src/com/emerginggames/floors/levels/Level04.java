@@ -34,7 +34,10 @@ public class Level04 extends Level {
     protected void initView() {
         super.initView();
         setControl(R.id.button);
+    }
 
+    @Override
+    protected void scaleViews() {
         scaleImageSize(R.id.button);
         scaleMargins(R.id.button);
         scaleImageSize(R.id.label2);

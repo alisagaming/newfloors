@@ -28,6 +28,7 @@ public class FloorActivity extends Activity {
     CheckImageView currentCell;
     LevelInterface levelInterface = new LevelInterface();
     Preferences prefs;
+    int topOverflow;
 
 
     public void onCreate(Bundle savedInstanceState) {
@@ -42,9 +43,9 @@ public class FloorActivity extends Activity {
         //prefs.setCurrentLevel(1);
         startLevel(prefs.getCurrentLevel());
 
-        int levelTopMargin = (int)(- ( 854 * Metrics.scale - Metrics.height));
-        if (levelTopMargin < 0 )
-            ((ViewGroup.MarginLayoutParams)(findViewById(R.id.levelCont).getLayoutParams())).topMargin = levelTopMargin;
+        topOverflow = (int)( (854 * Metrics.scale - Metrics.height) * 0.8f);
+        if (topOverflow > 0 )
+            ((ViewGroup.MarginLayoutParams)(findViewById(R.id.levelCont).getLayoutParams())).topMargin = -topOverflow;
     }
 
     @Override
@@ -72,8 +73,10 @@ public class FloorActivity extends Activity {
         if (cell.isChecked()) {
             currentCell = cell;
             currentLevel.itemSelected((Item) currentCell.getTag());
-        } else
+        } else{
             currentCell = null;
+            currentLevel.itemSelected(null);
+        }
     }
 
     public void OnRestartButtonClick(View v) {
@@ -174,7 +177,14 @@ public class FloorActivity extends Activity {
             if (currentCell != null) {
                 currentCell.setChecked(false);
                 currentCell = null;
+                currentLevel.itemSelected(null);
             }
+        }
+
+        @Override
+        public int getCoveredBottomHeight() {
+            int bottomOverflow = currentLevel.getHeight() - Metrics.height - topOverflow;
+            return findViewById(R.id.banner).getHeight() + findViewById(R.id.toolbar).getHeight() + bottomOverflow;
         }
     }
 

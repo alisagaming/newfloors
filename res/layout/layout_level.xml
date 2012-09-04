@@ -5,7 +5,7 @@
                 a:layout_height="fill_parent">
     <RelativeLayout a:id="@+id/levelCont"
                   a:layout_width="fill_parent" a:layout_height="wrap_content"
-                  a:layout_centerInParent="true"
+                  a:layout_alignParentTop="true"
             />
 
     <LinearLayout a:id="@+id/toolbar"

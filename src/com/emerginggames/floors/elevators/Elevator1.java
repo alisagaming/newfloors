@@ -30,10 +30,6 @@ public class Elevator1 extends Elevator {
         super(context, attrs);
     }
 
-    public Elevator1(Context context, AttributeSet attrs, int defStyle) {
-        super(context, attrs, defStyle);
-    }
-
     @Override
     public boolean isOpening(){
         return openingLeft || openingRight;

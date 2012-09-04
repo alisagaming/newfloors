@@ -6,18 +6,14 @@
 
         >
     <com.emrg.view.ImageView android:id="@+id/wall"
-                             android:layout_width="fill_parent" android:layout_height="wrap_content"
-                             android:adjustViewBounds="true" android:scaleType="fitCenter"
+                             style="@style/level_back"
                              android:src="@drawable/level6_wall"
                              android:layout_alignParentTop="true"
-
             />
     <com.emrg.view.ImageView android:id="@+id/floor"
-                             android:layout_width="fill_parent" android:layout_height="wrap_content"
-                             android:adjustViewBounds="true" android:scaleType="fitCenter"
+                             style="@style/level_back"
                              android:layout_below="@+id/wall"
-                             android:src="@drawable/level6_floor"
-            />
+                             android:src="@drawable/level6_floor"/>
 
     <com.emerginggames.floors.elevators.Elevator6 android:id="@+id/elevator"
                                                   android:layout_width="wrap_content"

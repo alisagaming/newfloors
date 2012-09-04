@@ -22,61 +22,122 @@ public final class R {
         public static final int slide_right_full=0x7f04000a;
     }
     public static final class attr {
+        /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int frame=0x7f010000;
+        /** <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int frameMarginTop=0x7f010006;
+        /** <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int innerPaddingBottom=0x7f010007;
+        /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int leftDoor=0x7f010001;
+        /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int leftDoorOpen=0x7f010003;
+        /** <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int openDoorMargin=0x7f010005;
+        /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int rightDoor=0x7f010002;
+        /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int rightDoorOpen=0x7f010004;
     }
     public static final class drawable {
         public static final int door_left=0x7f020000;
         public static final int door_right=0x7f020001;
         public static final int down_btn_red=0x7f020002;
-        public static final int elev4_door_l=0x7f020003;
-        public static final int elev4_door_l_open=0x7f020004;
-        public static final int elev4_door_r=0x7f020005;
-        public static final int elev4_door_r_open=0x7f020006;
-        public static final int elev4_frame=0x7f020007;
-        public static final int elev5_door_l=0x7f020008;
-        public static final int elev5_door_l_open=0x7f020009;
-        public static final int elev5_door_r=0x7f02000a;
-        public static final int elev5_door_r_open=0x7f02000b;
-        public static final int elev6_door_l=0x7f02000c;
-        public static final int elev6_door_r=0x7f02000d;
-        public static final int elev_frame=0x7f02000e;
-        public static final int elev_inner=0x7f02000f;
-        public static final int elevator5_frame=0x7f020010;
-        public static final int elevator6_frame=0x7f020011;
-        public static final int elevator_arrow_up=0x7f020012;
-        public static final int fl1_floor=0x7f020013;
-        public static final int fl1_wall=0x7f020014;
-        public static final int fl2_floor=0x7f020015;
-        public static final int fl2_key=0x7f020016;
-        public static final int fl2_tool_key=0x7f020017;
-        public static final int fl2_wall=0x7f020018;
-        public static final int fl3_note_large=0x7f020019;
-        public static final int fl3_tool_note=0x7f02001a;
-        public static final int fl3_wall_note=0x7f02001b;
-        public static final int icon=0x7f02001c;
-        public static final int level04_button=0x7f02001d;
-        public static final int level04_label1=0x7f02001e;
-        public static final int level04_label2=0x7f02001f;
-        public static final int level05_button=0x7f020020;
-        public static final int level4_btn=0x7f020021;
-        public static final int level4_btn_pressed=0x7f020022;
-        public static final int level4_floor=0x7f020023;
-        public static final int level4_wall=0x7f020024;
-        public static final int level5_btn=0x7f020025;
-        public static final int level5_btn_pressed=0x7f020026;
-        public static final int level5_floor=0x7f020027;
-        public static final int level5_indicator_back=0x7f020028;
-        public static final int level5_indicator_fill=0x7f020029;
-        public static final int level5_wall=0x7f02002a;
-        public static final int level6_arrow=0x7f02002b;
-        public static final int level6_floor=0x7f02002c;
-        public static final int level6_wall=0x7f02002d;
-        public static final int menu_button=0x7f02002e;
-        public static final int restart_button=0x7f02002f;
-        public static final int snappers_banner=0x7f020030;
-        public static final int toolbar=0x7f020031;
-        public static final int toolbar_cell=0x7f020032;
-        public static final int toolbar_cell_2state=0x7f020033;
-        public static final int up_btn_green=0x7f020034;
+        public static final int elev07_door_left=0x7f020003;
+        public static final int elev07_door_left_open=0x7f020004;
+        public static final int elev07_door_right=0x7f020005;
+        public static final int elev07_door_right_open=0x7f020006;
+        public static final int elev07_frame=0x7f020007;
+        public static final int elev4_door_l=0x7f020008;
+        public static final int elev4_door_l_open=0x7f020009;
+        public static final int elev4_door_r=0x7f02000a;
+        public static final int elev4_door_r_open=0x7f02000b;
+        public static final int elev4_frame=0x7f02000c;
+        public static final int elev5_door_l=0x7f02000d;
+        public static final int elev5_door_l_open=0x7f02000e;
+        public static final int elev5_door_r=0x7f02000f;
+        public static final int elev5_door_r_open=0x7f020010;
+        public static final int elev6_door_l=0x7f020011;
+        public static final int elev6_door_r=0x7f020012;
+        public static final int elev_frame=0x7f020013;
+        public static final int elev_inner=0x7f020014;
+        public static final int elevator5_frame=0x7f020015;
+        public static final int elevator6_frame=0x7f020016;
+        public static final int elevator_arrow_up=0x7f020017;
+        public static final int fl1_floor=0x7f020018;
+        public static final int fl1_wall=0x7f020019;
+        public static final int fl2_floor=0x7f02001a;
+        public static final int fl2_key=0x7f02001b;
+        public static final int fl2_tool_key=0x7f02001c;
+        public static final int fl2_wall=0x7f02001d;
+        public static final int fl3_note_large=0x7f02001e;
+        public static final int fl3_tool_note=0x7f02001f;
+        public static final int fl3_wall_note=0x7f020020;
+        public static final int icon=0x7f020021;
+        public static final int level04_button=0x7f020022;
+        public static final int level04_label1=0x7f020023;
+        public static final int level04_label2=0x7f020024;
+        public static final int level05_button=0x7f020025;
+        public static final int level07_brush1=0x7f020026;
+        public static final int level07_brush_icon=0x7f020027;
+        public static final int level07_dirt=0x7f020028;
+        public static final int level07_door_reflection=0x7f020029;
+        public static final int level07_floor=0x7f02002a;
+        public static final int level07_wall=0x7f02002b;
+        public static final int level4_btn=0x7f02002c;
+        public static final int level4_btn_pressed=0x7f02002d;
+        public static final int level4_floor=0x7f02002e;
+        public static final int level4_wall=0x7f02002f;
+        public static final int level5_btn=0x7f020030;
+        public static final int level5_btn_pressed=0x7f020031;
+        public static final int level5_floor=0x7f020032;
+        public static final int level5_indicator_back=0x7f020033;
+        public static final int level5_indicator_fill=0x7f020034;
+        public static final int level5_wall=0x7f020035;
+        public static final int level6_arrow=0x7f020036;
+        public static final int level6_floor=0x7f020037;
+        public static final int level6_wall=0x7f020038;
+        public static final int menu_button=0x7f020039;
+        public static final int restart_button=0x7f02003a;
+        public static final int snappers_banner=0x7f02003b;
+        public static final int toolbar=0x7f02003c;
+        public static final int toolbar_cell=0x7f02003d;
+        public static final int toolbar_cell_2state=0x7f02003e;
+        public static final int up_btn_green=0x7f02003f;
     }
     public static final class id {
         public static final int arrow=0x7f05001b;
@@ -84,27 +145,29 @@ public final class R {
         public static final int bar=0x7f050018;
         public static final int bar_fill=0x7f05001a;
         public static final int bar_inner=0x7f050019;
+        public static final int brush=0x7f05001d;
         public static final int button=0x7f050015;
         public static final int cell1=0x7f050006;
         public static final int cell2=0x7f050007;
         public static final int cell3=0x7f050008;
         public static final int cell4=0x7f050009;
         public static final int down_btn=0x7f050011;
-        public static final int elev_doors=0x7f05001d;
+        public static final int dustView=0x7f05001c;
+        public static final int elev_doors=0x7f05001f;
         public static final int elevator=0x7f05000f;
-        public static final int elevator_door_left=0x7f05001e;
-        public static final int elevator_door_left_open=0x7f050025;
-        public static final int elevator_door_right=0x7f05001f;
-        public static final int elevator_door_right_open=0x7f050026;
-        public static final int elevator_frame=0x7f050020;
-        public static final int elevator_inner=0x7f05001c;
+        public static final int elevator_door_left=0x7f050020;
+        public static final int elevator_door_left_open=0x7f050027;
+        public static final int elevator_door_right=0x7f050021;
+        public static final int elevator_door_right_open=0x7f050028;
+        public static final int elevator_frame=0x7f050022;
+        public static final int elevator_inner=0x7f05001e;
         public static final int elevator_inner_arrow_up=0x7f050001;
         public static final int elevator_inner_img=0x7f050000;
         public static final int floor=0x7f05000e;
-        public static final int item1=0x7f050021;
-        public static final int item2=0x7f050023;
-        public static final int item3=0x7f050022;
-        public static final int item4=0x7f050024;
+        public static final int item1=0x7f050023;
+        public static final int item2=0x7f050025;
+        public static final int item3=0x7f050024;
+        public static final int item4=0x7f050026;
         public static final int key=0x7f050012;
         public static final int label1=0x7f050017;
         public static final int label2=0x7f050016;
@@ -128,11 +191,12 @@ public final class R {
         public static final int level_04=0x7f030005;
         public static final int level_05=0x7f030006;
         public static final int level_06=0x7f030007;
-        public static final int partial_elevator_01=0x7f030008;
-        public static final int partial_elevator_06=0x7f030009;
-        public static final int partial_elevator_2dors_open=0x7f03000a;
-        public static final int simple_spinner_dropdown_item=0x7f03000b;
-        public static final int simple_spinner_item=0x7f03000c;
+        public static final int level_07=0x7f030008;
+        public static final int partial_elevator_01=0x7f030009;
+        public static final int partial_elevator_06=0x7f03000a;
+        public static final int partial_elevator_2dors_open=0x7f03000b;
+        public static final int simple_spinner_dropdown_item=0x7f03000c;
+        public static final int simple_spinner_item=0x7f03000d;
     }
     public static final class string {
         public static final int app_name=0x7f060000;
@@ -140,15 +204,144 @@ public final class R {
         public static final int start=0x7f060002;
     }
     public static final class style {
-        public static final int Animation_CustomAnimation=0x7f070008;
-        public static final int Animation_DialogAnimation=0x7f070009;
+        public static final int Animation_CustomAnimation=0x7f070009;
+        public static final int Animation_DialogAnimation=0x7f07000a;
         public static final int ElevatorInnerArrowUp=0x7f070006;
         public static final int ElevatorInnerImg=0x7f070005;
         public static final int ScaleImage=0x7f070002;
         public static final int ScaleImageCenterHoriz=0x7f070003;
         public static final int VerticalWeight1=0x7f070004;
         public static final int WrapContentCenterHoriz=0x7f070001;
-        public static final int appTheme=0x7f070007;
+        public static final int appTheme=0x7f070008;
+        public static final int level_back=0x7f070007;
         public static final int toolbarCell=0x7f070000;
     }
+    public static final class styleable {
+        /** Attributes that can be used with a Elevator_open2doors.
+           <p>Includes the following attributes:</p>
+           <table>
+           <colgroup align="left" />
+           <colgroup align="left" />
+           <tr><th>Attribute</th><th>Description</th></tr>
+           <tr><td><code>{@link #Elevator_open2doors_frame com.emerginggames.floors:frame}</code></td><td></td></tr>
+           <tr><td><code>{@link #Elevator_open2doors_frameMarginTop com.emerginggames.floors:frameMarginTop}</code></td><td></td></tr>
+           <tr><td><code>{@link #Elevator_open2doors_innerPaddingBottom com.emerginggames.floors:innerPaddingBottom}</code></td><td></td></tr>
+           <tr><td><code>{@link #Elevator_open2doors_leftDoor com.emerginggames.floors:leftDoor}</code></td><td></td></tr>
+           <tr><td><code>{@link #Elevator_open2doors_leftDoorOpen com.emerginggames.floors:leftDoorOpen}</code></td><td></td></tr>
+           <tr><td><code>{@link #Elevator_open2doors_openDoorMargin com.emerginggames.floors:openDoorMargin}</code></td><td></td></tr>
+           <tr><td><code>{@link #Elevator_open2doors_rightDoor com.emerginggames.floors:rightDoor}</code></td><td></td></tr>
+           <tr><td><code>{@link #Elevator_open2doors_rightDoorOpen com.emerginggames.floors:rightDoorOpen}</code></td><td></td></tr>
+           </table>
+           @see #Elevator_open2doors_frame
+           @see #Elevator_open2doors_frameMarginTop
+           @see #Elevator_open2doors_innerPaddingBottom
+           @see #Elevator_open2doors_leftDoor
+           @see #Elevator_open2doors_leftDoorOpen
+           @see #Elevator_open2doors_openDoorMargin
+           @see #Elevator_open2doors_rightDoor
+           @see #Elevator_open2doors_rightDoorOpen
+         */
+        public static final int[] Elevator_open2doors = {
+            0x7f010000, 0x7f010001, 0x7f010002, 0x7f010003,
+            0x7f010004, 0x7f010005, 0x7f010006, 0x7f010007
+        };
+        /**
+          <p>This symbol is the offset where the {@link com.emerginggames.floors.R.attr#frame}
+          attribute's value can be found in the {@link #Elevator_open2doors} array.
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          @attr name android:frame
+        */
+        public static final int Elevator_open2doors_frame = 0;
+        /**
+          <p>This symbol is the offset where the {@link com.emerginggames.floors.R.attr#frameMarginTop}
+          attribute's value can be found in the {@link #Elevator_open2doors} array.
+
+
+          <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name android:frameMarginTop
+        */
+        public static final int Elevator_open2doors_frameMarginTop = 6;
+        /**
+          <p>This symbol is the offset where the {@link com.emerginggames.floors.R.attr#innerPaddingBottom}
+          attribute's value can be found in the {@link #Elevator_open2doors} array.
+
+
+          <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name android:innerPaddingBottom
+        */
+        public static final int Elevator_open2doors_innerPaddingBottom = 7;
+        /**
+          <p>This symbol is the offset where the {@link com.emerginggames.floors.R.attr#leftDoor}
+          attribute's value can be found in the {@link #Elevator_open2doors} array.
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          @attr name android:leftDoor
+        */
+        public static final int Elevator_open2doors_leftDoor = 1;
+        /**
+          <p>This symbol is the offset where the {@link com.emerginggames.floors.R.attr#leftDoorOpen}
+          attribute's value can be found in the {@link #Elevator_open2doors} array.
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          @attr name android:leftDoorOpen
+        */
+        public static final int Elevator_open2doors_leftDoorOpen = 3;
+        /**
+          <p>This symbol is the offset where the {@link com.emerginggames.floors.R.attr#openDoorMargin}
+          attribute's value can be found in the {@link #Elevator_open2doors} array.
+
+
+          <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name android:openDoorMargin
+        */
+        public static final int Elevator_open2doors_openDoorMargin = 5;
+        /**
+          <p>This symbol is the offset where the {@link com.emerginggames.floors.R.attr#rightDoor}
+          attribute's value can be found in the {@link #Elevator_open2doors} array.
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          @attr name android:rightDoor
+        */
+        public static final int Elevator_open2doors_rightDoor = 2;
+        /**
+          <p>This symbol is the offset where the {@link com.emerginggames.floors.R.attr#rightDoorOpen}
+          attribute's value can be found in the {@link #Elevator_open2doors} array.
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          @attr name android:rightDoorOpen
+        */
+        public static final int Elevator_open2doors_rightDoorOpen = 4;
+    };
 }
