@@ -18,6 +18,7 @@ import com.emrg.view.ImageView;
  */
 public abstract class Elevator extends ScaledRelativeLayout {
     boolean doorsOpen;
+    public DoorOpenListener doorOpenListener;
 
     public Elevator(Context context) {
         super(context);
@@ -59,8 +60,6 @@ public abstract class Elevator extends ScaledRelativeLayout {
         addView(inflate(getContext(), getLayoutId(), null));
     }
 
-
-
     public boolean isOpen(){
         return doorsOpen;
     }
@@ -70,11 +69,12 @@ public abstract class Elevator extends ScaledRelativeLayout {
         if (isOpen){
             findViewById(R.id.elev_doors).setVisibility(GONE);
             findViewById(R.id.elevator_inner_arrow_up).setVisibility(VISIBLE);
+            if (doorOpenListener != null)
+                doorOpenListener.onDoorOpen();
         }else {
             findViewById(R.id.elev_doors).setVisibility(VISIBLE);
             findViewById(R.id.elevator_inner_arrow_up).setVisibility(GONE);
         }
-
     }
 
     public void reset(){
@@ -93,10 +93,18 @@ public abstract class Elevator extends ScaledRelativeLayout {
         });
     }
 
+    public void setDoorOpenListener(DoorOpenListener doorOpenListener) {
+        this.doorOpenListener = doorOpenListener;
+    }
+
     public abstract boolean isOpening();
 
 
     public abstract void openDoors();
     public abstract void closeDoors();
     public abstract int getLayoutId();
+
+    public interface DoorOpenListener{
+        public void onDoorOpen();
+    }
 }

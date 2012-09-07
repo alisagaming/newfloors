@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.drawable.Drawable;
 import android.util.AttributeSet;
+import android.view.View;
 import com.emerginggames.floors.Metrics;
 import com.emerginggames.floors.R;
 import com.emrg.view.ImageView;
@@ -140,5 +141,27 @@ public class Elevator_open2doors extends Elevator {
     protected void setDoorsOpen(boolean isOpen) {
         doorsOpen = isOpen;
         findViewById(R.id.elevator_inner_arrow_up).setVisibility(isOpen ? VISIBLE : GONE);
+        if (doorOpenListener != null)
+            doorOpenListener.onDoorOpen();
+    }
+
+    public View getLeftDoor(){
+        return findViewById(R.id.elevator_door_left);
+    }
+
+    public View getRightDoor(){
+        return findViewById(R.id.elevator_door_right);
+    }
+
+    public void unlock(){
+        View.OnClickListener listener = new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openDoors();
+            }
+        };
+
+        findViewById(R.id.elevator_door_left).setOnClickListener(listener);
+        findViewById(R.id.elevator_door_right).setOnClickListener(listener);
     }
 }
