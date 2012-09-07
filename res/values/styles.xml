@@ -45,4 +45,15 @@
         <item name="android:adjustViewBounds">true</item>
     </style>
 
+    <style name="level9_digit">
+        <item name="android:layout_width">45px</item>
+        <item name="android:layout_height">45px</item>
+        <item name="android:background">@drawable/level_09_digit_back</item>
+        <item name="android:text">0</item>
+        <item name="android:gravity">center_horizontal|top</item>
+        <item name="android:textSize">30px</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:paddingTop">-15px</item>
+    </style>
+
 </resources>

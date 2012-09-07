@@ -2,10 +2,12 @@ package com.emerginggames.floors.levels;
 
 import android.content.Context;
 import android.util.SparseArray;
+import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 import com.emerginggames.floors.Metrics;
 import com.emerginggames.floors.R;
 import com.emerginggames.floors.Settings;
@@ -41,10 +43,16 @@ public abstract class Level extends RelativeLayout {
             for (int i = 0; i < items.size(); i++) {
                 viewId = items.keyAt(i);
                 item = items.valueAt(i);
-                View itemView = findViewById(viewId);
-                itemView.setTag(item);
-                itemView.setOnClickListener(itemClickListener);
-                itemView.setVisibility(VISIBLE);
+                if (item.activated)
+                    levelListener.addItem(item);
+                else {
+                    View itemView = findViewById(viewId);
+                    if (itemView != null){
+                        itemView.setTag(item);
+                        itemView.setOnClickListener(itemClickListener);
+                        itemView.setVisibility(VISIBLE);
+                    }
+                }
             }
         }
     }
@@ -61,11 +69,16 @@ public abstract class Level extends RelativeLayout {
     }
 
     void scaleView(int id){
-        ViewGroup.LayoutParams lp = findViewById(id).getLayoutParams();
+        View v = findViewById(id);
+        ViewGroup.LayoutParams lp = v.getLayoutParams();
         if (lp.width >0)
             lp.width = (int)(lp.width * Metrics.scale);
         if (lp.height >0)
             lp.height = (int)(lp.height * Metrics.scale);
+
+        if (v instanceof TextView)
+            ((TextView)v).setTextSize(TypedValue.COMPLEX_UNIT_PX, (int)( ((TextView) v) .getTextSize() * Metrics.scale ));
+
     }
 
     void scaleImageSize(int id) {

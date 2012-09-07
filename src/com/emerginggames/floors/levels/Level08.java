@@ -8,6 +8,7 @@ import android.widget.RelativeLayout;
 import com.emerginggames.floors.R;
 import com.emerginggames.floors.elevators.Elevator;
 import com.emerginggames.floors.elevators.Elevator_open2doors;
+import com.emerginggames.floors.items.ItemNotepadLevel3;
 import com.emerginggames.floors.model.Item;
 import com.emrg.view.ImageView;
 
@@ -26,6 +27,7 @@ public class Level08 extends Level {
         super(levelListener, context);
         items = new SparseArray<Item>();
         items.append(R.id.handle, new Item(1, R.drawable.level08_handle_icon));
+        items.append(R.id.note, new ItemNotepadLevel3(1, R.drawable.fl3_tool_note, true));
     }
 
     @Override
@@ -61,6 +63,17 @@ public class Level08 extends Level {
 
     @Override
     protected void scaleViews() {
+        scaleImageSize(R.id.plate);
+        scaleMargins(R.id.plate);
+
+        scaleImageSize(R.id.handle);
+        scaleMargins(R.id.handle);
+
+        scaleImageSize(R.id.handle_placement);
+        scaleMargins(R.id.handle_placement);
+
+        scaleImageSize(R.id.right_door_handle);
+        scaleMargins(R.id.right_door_handle);
     }
 
     @Override
@@ -88,6 +101,7 @@ public class Level08 extends Level {
         rightDoorHandle = new ImageView(getContext());
         rightDoorHandle.setImageResource(R.drawable.elev08_door_handle2);
         rightDoorHandle.setVisibility(GONE);
+        rightDoorHandle.setId(R.id.right_door_handle);
         lp = new LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
         lp.addRule(RelativeLayout.ALIGN_LEFT, rightDoorId);
         lp.leftMargin = 2;

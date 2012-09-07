@@ -2,4 +2,5 @@
     <item type="id" name="elevator_inner_img"/>
     <item type="id" name="elevator_inner_arrow_up"/>
     <item type="id" name="handle_placement"/>
+    <item type="id" name="right_door_handle"/>
 </resources>

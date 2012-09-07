@@ -1,10 +1,13 @@
 package com.emerginggames.floors.levels;
 
 import android.content.Context;
+import android.util.SparseArray;
 import android.view.View;
 import com.emerginggames.floors.R;
 import com.emerginggames.floors.Settings;
 import com.emerginggames.floors.elevators.Elevator6;
+import com.emerginggames.floors.items.ItemNotepadLevel3;
+import com.emerginggames.floors.model.Item;
 
 /**
  * Created with IntelliJ IDEA.
@@ -19,6 +22,8 @@ public class Level06 extends Level {
 
     public Level06(LevelListener levelListener, Context context) {
         super(levelListener, context);
+        items = new SparseArray<Item>(1);
+        items.append(R.id.note, new ItemNotepadLevel3(1, R.drawable.fl3_tool_note, true));
     }
 
     @Override

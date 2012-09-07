@@ -12,8 +12,6 @@ import com.emerginggames.floors.levels.*;
 import com.emerginggames.floors.model.Item;
 import com.emrg.view.CheckImageView;
 
-import java.util.concurrent.locks.ReentrantReadWriteLock;
-
 /**
  * Created with IntelliJ IDEA.
  * User: babay
@@ -63,20 +61,38 @@ public class FloorActivity extends Activity {
     }
 
     public void OnMenuButtonClick(View v) {
-
+        finish();
     }
 
     public void OnCellClick(View v) {
         CheckImageView cell = (CheckImageView) v;
-        if (currentCell != v && currentCell != null)
-            currentCell.setChecked(false);
-        if (cell.isChecked()) {
-            currentCell = cell;
-            currentLevel.itemSelected((Item) currentCell.getTag());
-        } else{
-            currentCell = null;
-            currentLevel.itemSelected(null);
-        }
+        deactivateCurrentCell();
+        if (cell.isChecked())
+            activateCell(cell);
+    }
+
+    void activateCell(CheckImageView cell){
+        currentLevel.itemSelected((Item) cell.getTag());
+
+        Item item = (Item) cell.getTag();
+        if (item != null)
+            item.onActivate(currentLevel);
+
+        currentLevel.itemSelected((Item) cell.getTag());
+        currentCell = cell;
+    }
+
+    void deactivateCurrentCell(){
+        if (currentCell == null)
+            return;
+
+        currentCell.setChecked(false);
+        Item item = (Item) currentCell.getTag();
+        if (item != null)
+            item.onDeactivate(currentLevel);
+
+        currentLevel.itemSelected(null);
+        currentCell = null;
     }
 
     public void OnRestartButtonClick(View v) {

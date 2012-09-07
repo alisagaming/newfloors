@@ -8,6 +8,7 @@ import android.hardware.SensorManager;
 import android.util.SparseArray;
 import android.view.View;
 import com.emerginggames.floors.R;
+import com.emerginggames.floors.items.ItemNotepadLevel3;
 import com.emerginggames.floors.model.Item;
 
 /**
@@ -21,7 +22,7 @@ public class Level03 extends Level {
     public Level03(LevelListener levelListener, Context context) {
         super(levelListener, context);
         items = new SparseArray<Item>(1);
-        items.append(R.id.note, new Item(1, R.drawable.fl3_tool_note));
+        items.append(R.id.note, new ItemNotepadLevel3(1, R.drawable.fl3_tool_note));
         initShakeDetector();
     }
 
@@ -41,17 +42,6 @@ public class Level03 extends Level {
     }
 
     @Override
-    protected void initView() {
-        super.initView();
-        findViewById(R.id.note_large).setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                findViewById(R.id.note_large).setVisibility(GONE);
-            }
-        });
-    }
-
-    @Override
     protected void scaleViews() {
         scaleImageSize(R.id.up_btn);
         scaleImageSize(R.id.down_btn);
@@ -59,15 +49,6 @@ public class Level03 extends Level {
         scaleImageSize(R.id.note);
         scaleMargins(R.id.note, true, false, false, true);
         scaleImageSize(R.id.note_large);
-
-    }
-
-    @Override
-    public void itemSelected(Item item) {
-        if (item != null){
-            levelListener.resetCurrentItem();
-            findViewById(R.id.note_large).setVisibility(VISIBLE);
-        }
     }
 
     @Override

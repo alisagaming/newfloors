@@ -10,6 +10,7 @@ import android.view.animation.RotateAnimation;
 import android.widget.RelativeLayout;
 import com.emerginggames.floors.Metrics;
 import com.emerginggames.floors.R;
+import com.emerginggames.floors.items.ItemNotepadLevel3;
 import com.emerginggames.floors.model.Item;
 import com.emerginggames.floors.view.DustView;
 import com.emrg.view.ImageView;
@@ -28,11 +29,11 @@ public class Level07 extends Level {
         super(levelListener, context);
         items = new SparseArray<Item>(1);
         items.append(R.id.brush, new Item(1, R.drawable.level07_brush_icon));
+        items.append(R.id.note, new ItemNotepadLevel3(1, R.drawable.fl3_tool_note, true));
     }
 
     @Override
     protected void onElementClicked(View elementView) {
-
     }
 
     @Override
