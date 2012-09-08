@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
+import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.RelativeLayout;
@@ -96,7 +97,48 @@ public class FloorActivity extends Activity {
     }
 
     public void OnRestartButtonClick(View v) {
-        onLevelStart();
+        //onLevelStart();
+        AlphaAnimation anim = new AlphaAnimation(1, 0);
+        anim.setDuration(300);
+        anim.setRepeatCount(0);
+        currentLevel.startAnimation(anim);
+        anim.setAnimationListener(new Animation.AnimationListener() {
+            @Override
+            public void onAnimationStart(Animation animation) {
+            }
+
+            @Override
+            public void onAnimationEnd(Animation animation) {
+                currentLevel.clearAnimation();
+                ViewGroup levelCont = (ViewGroup) findViewById(R.id.levelCont);
+                levelCont.removeView(currentLevel);
+                startLevel(prefs.getCurrentLevel());
+                AlphaAnimation anim = new AlphaAnimation(0, 1);
+                anim.setDuration(300);
+                anim.setRepeatCount(0);
+                anim.setFillBefore(true);
+                currentLevel.startAnimation(anim);
+                anim.setAnimationListener(new Animation.AnimationListener() {
+                    @Override
+                    public void onAnimationStart(Animation animation) {
+                    }
+
+                    @Override
+                    public void onAnimationEnd(Animation animation) {
+                        currentLevel.clearAnimation();
+                    }
+
+                    @Override
+                    public void onAnimationRepeat(Animation animation) {
+                    }
+                });
+
+            }
+
+            @Override
+            public void onAnimationRepeat(Animation animation) {
+            }
+        });
     }
 
     void startLevel(int n) {
