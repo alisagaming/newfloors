@@ -102,21 +102,22 @@ public class Elevator_open2doors extends Elevator {
 
     @Override
     protected void scaleViews() {
-        scaleImage(R.id.elevator_frame);
+        super.scaleViews();
+        /*scaleImage(R.id.elevator_frame);
 
         scaleImage(R.id.elevator_door_left);
         scaleImage(R.id.elevator_door_right);
 
         scaleImage(R.id.elevator_door_left_open);
-        scaleImage(R.id.elevator_door_right_open);
+        scaleImage(R.id.elevator_door_right_open);*/
 
         ((MarginLayoutParams) findViewById(R.id.elevator_door_left_open).getLayoutParams()).rightMargin = doorMargin;
         ((MarginLayoutParams) findViewById(R.id.elevator_door_right_open).getLayoutParams()).leftMargin = doorMargin;
         ((MarginLayoutParams) findViewById(R.id.elevator_frame).getLayoutParams()).topMargin = frameMargin;
         findViewById(R.id.elevator_inner).setPadding(0, 0, 0, innerPaddingBottom);
 
-        scaleImage(R.id.elevator_inner_img);
-        scaleImage(R.id.elevator_inner_arrow_up);
+        //scaleImage(R.id.elevator_inner_img);
+        //scaleImage(R.id.elevator_inner_arrow_up);
     }
 
     @Override
@@ -136,14 +137,6 @@ public class Elevator_open2doors extends Elevator {
         findViewById(R.id.elevator_door_right_open).setVisibility(INVISIBLE);
         setDoorsOpen(false);
     }
-
-/*    @Override
-    protected void setDoorsOpen(boolean isOpen) {
-        doorsOpen = isOpen;
-        findViewById(R.id.elevator_inner_arrow_up).setVisibility(isOpen ? VISIBLE : GONE);
-        if (doorOpenListener != null)
-            doorOpenListener.onDoorOpen();
-    }*/
 
     public View getLeftDoor(){
         return findViewById(R.id.elevator_door_left);

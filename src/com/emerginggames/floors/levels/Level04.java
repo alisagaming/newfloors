@@ -42,14 +42,14 @@ public class Level04 extends Level {
         setControl(R.id.button);
     }
 
-    @Override
+/*    @Override
     protected void scaleViews() {
         scaleImageSize(R.id.button);
         scaleMargins(R.id.button);
         scaleImageSize(R.id.label2);
         scaleImageSize(R.id.label1);
         scaleMargins(R.id.label1);
-    }
+    }*/
 
     @Override
     public void start() {

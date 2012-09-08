@@ -43,7 +43,8 @@ public class Level07 extends Level {
 
     @Override
     protected void scaleViews() {
-        scaleImageSize(R.id.brush);
+        scaleMargins(elevator);
+        scaleImage(R.id.brush);
         scaleMargins(R.id.brush);
     }
 

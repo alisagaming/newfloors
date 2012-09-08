@@ -29,8 +29,8 @@
                   android:orientation="vertical"
                   android:layout_alignBottom="@+id/elevator"
                   android:layout_toRightOf="@+id/elevator"
-                  android:layout_marginBottom="55dp"
-                  android:layout_marginLeft="10dp"
+                  android:layout_marginBottom="75px"
+                  android:layout_marginLeft="15px"
             >
         <com.emrg.view.ImageView
                 android:id="@+id/up_btn"

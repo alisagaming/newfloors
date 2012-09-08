@@ -13,6 +13,7 @@ import com.emerginggames.floors.R;
 import com.emerginggames.floors.Settings;
 import com.emerginggames.floors.elevators.Elevator;
 import com.emerginggames.floors.model.Item;
+import com.emerginggames.floors.view.ScaledRelativeLayout;
 import com.emrg.view.ImageView;
 
 /**
@@ -22,7 +23,7 @@ import com.emrg.view.ImageView;
  * Time: 9:41
  * To change this template use File | Settings | File Templates.
  */
-public abstract class Level extends RelativeLayout {
+public abstract class Level extends ScaledRelativeLayout {
     LevelListener levelListener;
     Context context;
     Elevator elevator;
@@ -68,54 +69,6 @@ public abstract class Level extends RelativeLayout {
             v.setSoundEffectsEnabled(false);
     }
 
-    void scaleView(int id){
-        View v = findViewById(id);
-        ViewGroup.LayoutParams lp = v.getLayoutParams();
-        if (lp.width >0)
-            lp.width = (int)(lp.width * Metrics.scale);
-        if (lp.height >0)
-            lp.height = (int)(lp.height * Metrics.scale);
-
-        if (v instanceof TextView)
-            ((TextView)v).setTextSize(TypedValue.COMPLEX_UNIT_PX, (int)( ((TextView) v) .getTextSize() * Metrics.scale ));
-
-    }
-
-    void scaleImageSize(int id) {
-        ImageView image = (ImageView) findViewById(id);
-        MarginLayoutParams lp = (MarginLayoutParams) image.getLayoutParams();
-        lp.width = (int) (image.getDrawable().getIntrinsicWidth() * Metrics.scale);
-        lp.height = (int) (image.getDrawable().getIntrinsicHeight() * Metrics.scale);
-    }
-
-    void scaleMargins(int id) {
-        View v = findViewById(id);
-        MarginLayoutParams lp = (MarginLayoutParams) v.getLayoutParams();
-        lp.leftMargin = (int) (lp.leftMargin * Metrics.scale);
-        lp.topMargin = (int) (lp.topMargin * Metrics.scale);
-        lp.rightMargin = (int) (lp.rightMargin * Metrics.scale);
-        lp.bottomMargin = (int) (lp.bottomMargin * Metrics.scale);
-    }
-
-    void scaleMargins(int id, boolean adjustLeftMargin, boolean adjustTopMargin, boolean adjustRightMargin, boolean adjustBottomMargin) {
-        View v = findViewById(id);
-        MarginLayoutParams lp = (MarginLayoutParams) v.getLayoutParams();
-        if (adjustLeftMargin)
-            lp.leftMargin = (int) (lp.leftMargin * Metrics.scale);
-        if (adjustTopMargin)
-            lp.topMargin = (int) (lp.topMargin * Metrics.scale);
-        if (adjustRightMargin)
-            lp.rightMargin = (int) (lp.rightMargin * Metrics.scale);
-        if (adjustBottomMargin)
-            lp.bottomMargin = (int) (lp.bottomMargin * Metrics.scale);
-    }
-
-    void scalePaddings(int id) {
-        View v = findViewById(id);
-        float scale = Metrics.scale;
-        v.setPadding((int) (v.getPaddingLeft() * scale), (int) (v.getPaddingTop() * scale), (int) (v.getPaddingRight() * scale), (int) (v.getPaddingBottom() * scale));
-    }
-
     public void start() {
         initItems();
         elevator.reset();
@@ -127,8 +80,6 @@ public abstract class Level extends RelativeLayout {
     public void onPause() {
     }
 
-
-
     public void itemSelected(Item item) {
     }
 
@@ -137,9 +88,6 @@ public abstract class Level extends RelativeLayout {
         addView(inflater.inflate(getLevelLayoutId(), null));
         elevator = ((Elevator) findViewById(R.id.elevator));
         elevator.getElevatorInnerView().setOnClickListener(elevatorDoneListener);
-        MarginLayoutParams lp = (MarginLayoutParams) elevator.getLayoutParams();
-        lp.bottomMargin = (int) (lp.bottomMargin * Metrics.scale);
-
     }
 
     protected void onItemClickListener(View itemView) {
@@ -151,9 +99,6 @@ public abstract class Level extends RelativeLayout {
     protected abstract void onElementClicked(View elementView);
 
     protected abstract int getLevelLayoutId();
-
-    protected abstract void scaleViews();
-
 
     protected View.OnClickListener itemClickListener = new View.OnClickListener() {
         @Override

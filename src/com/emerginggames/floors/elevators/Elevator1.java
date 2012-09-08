@@ -58,15 +58,6 @@ public class Elevator1 extends Elevator {
     }
 
     @Override
-    protected void scaleViews() {
-        scaleImage(R.id.elevator_frame);
-        scaleImage(R.id.elevator_inner_img);
-        scaleImage(R.id.elevator_inner_arrow_up);
-        scalePadding(R.id.elevator_inner_img);
-        scalePadding(R.id.elev_doors);
-    }
-
-    @Override
     public void openDoors(){
         openDoorLeft();
         openDoorRight();

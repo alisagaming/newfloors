@@ -87,17 +87,6 @@ public class Elevator6 extends Elevator {
         return R.layout.partial_elevator_06;
     }
 
-    @Override
-    protected void scaleViews() {
-        scaleImage(R.id.elevator_frame);
-        scaleImage(R.id.elevator_inner_img);
-        scaleImage(R.id.elevator_inner_arrow_up);
-        scaleMargins(R.id.elevator_inner);
-        scaleImage(R.id.elevator_inner_arrow_up);
-        scaleImage(R.id.elevator_door_left);
-        scaleImage(R.id.elevator_door_right);
-    }
-
     public View getItem(int n){
         switch (n){
             case 1:
@@ -111,21 +100,6 @@ public class Elevator6 extends Elevator {
         }
         return null;
     }
-
-/*    Animation.AnimationListener doorOpenListener = new Animation.AnimationListener() {
-        @Override
-        public void onAnimationStart(Animation animation) {}
-
-        @Override
-        public void onAnimationEnd(Animation animation) {
-            doorsOpen = true;
-            openingDoors =false;
-            findViewById(R.id.elev_doors).setVisibility(View.GONE);
-        }
-
-        @Override
-        public void onAnimationRepeat(Animation animation) {}
-    };*/
 
     void moveDoors(float offset){
         float newRightPos = rightDoorPosition + offset;

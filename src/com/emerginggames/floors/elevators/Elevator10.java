@@ -43,18 +43,4 @@ public class Elevator10 extends Elevator {
     public int getLayoutId() {
         return R.layout.partial_elevator_10;
     }
-
-    @Override
-    protected void scaleViews() {
-        scaleImage(R.id.elevator_frame);
-        scaleImage(R.id.elevator_inner_img);
-        scaleImage(R.id.elevator_inner_arrow_up);
-
-        scaleMargins(R.id.elevator_inner);
-
-        scaleMargins(R.id.elev_doors);
-        scaleImage(R.id.elevator_door);
-        scaleImage(R.id.elevator_door_open);
-        scaleMargins(R.id.elevator_door_open);
-    }
 }

@@ -66,13 +66,14 @@ public class Level05 extends Level {
 
     @Override
     protected void scaleViews() {
+        scaleMargins(elevator);
         scaleView(R.id.bar);
         scaleMargins(R.id.bar);
-        scalePaddings(R.id.bar);
+        scalePadding(R.id.bar);
 
         scaleView(R.id.bar_fill);
 
-        scaleImageSize(R.id.button);
+        scaleImage(R.id.button);
         scaleMargins(R.id.button);
 
         setControl(R.id.button);

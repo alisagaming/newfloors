@@ -77,6 +77,7 @@ public class Level09 extends Level {
 
     @Override
     protected void scaleViews() {
+        scaleMargins(elevator);
         scaleView(R.id.digit1);
         scaleView(R.id.digit2);
         scaleView(R.id.digit3);
@@ -87,7 +88,7 @@ public class Level09 extends Level {
         scaleView(R.id.digit8);
         scaleView(R.id.digit9);
         scaleMargins(R.id.digits);
-        scaleImageSize(R.id.icon);
+        scaleImage(R.id.icon);
     }
 
     @Override

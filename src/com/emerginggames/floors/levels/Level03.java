@@ -41,7 +41,7 @@ public class Level03 extends Level {
         startShakeListener();
     }
 
-    @Override
+/*    @Override
     protected void scaleViews() {
         scaleImageSize(R.id.up_btn);
         scaleImageSize(R.id.down_btn);
@@ -49,7 +49,7 @@ public class Level03 extends Level {
         scaleImageSize(R.id.note);
         scaleMargins(R.id.note, true, false, false, true);
         scaleImageSize(R.id.note_large);
-    }
+    }*/
 
     @Override
     public void onResume() {

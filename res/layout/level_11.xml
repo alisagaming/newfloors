@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res/com.emerginggames.floors"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent">
+
+    <com.emrg.view.ImageView android:id="@+id/wall"
+                             style="@style/level_back"
+                             android:src="@drawable/level11_wall"
+                             android:layout_alignParentTop="true"
+            />
+    <com.emrg.view.ImageView android:id="@+id/floor"
+                             style="@style/level_back"
+                             android:layout_below="@+id/wall"
+                             android:src="@drawable/level11_floor"/>
+
+
+
+    <com.emerginggames.floors.elevators.Elevator11 android:id="@+id/elevator"
+                                                            android:layout_width="wrap_content"
+                                                            android:layout_height="wrap_content"
+                                                            android:layout_centerHorizontal="true"
+                                                            android:layout_above="@+id/floor"
+                                                            android:layout_marginBottom="-7px"
+                                                            android:layout_alignParentTop="false"
+                                                            />
+
+    <com.emrg.view.ImageView android:id="@+id/hint"
+                             style="@style/ScaleImage"
+                             android:src="@drawable/level11_wall_record"
+                             android:layout_above="@+id/elevator"
+                             android:layout_marginLeft="30px"
+                             android:layout_marginBottom="20px"
+            />
+
+
+</RelativeLayout>

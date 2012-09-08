@@ -63,16 +63,17 @@ public class Level08 extends Level {
 
     @Override
     protected void scaleViews() {
-        scaleImageSize(R.id.plate);
+        scaleMargins(elevator);
+        scaleImage(R.id.plate);
         scaleMargins(R.id.plate);
 
-        scaleImageSize(R.id.handle);
+        scaleImage(R.id.handle);
         scaleMargins(R.id.handle);
 
-        scaleImageSize(R.id.handle_placement);
+        scaleImage(R.id.handle_placement);
         scaleMargins(R.id.handle_placement);
 
-        scaleImageSize(R.id.right_door_handle);
+        scaleImage(R.id.right_door_handle);
         scaleMargins(R.id.right_door_handle);
     }
 

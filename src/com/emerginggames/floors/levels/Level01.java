@@ -41,9 +41,9 @@ public class Level01 extends Level {
         findViewById(R.id.down_btn).setVisibility(View.INVISIBLE);
     }
 
-    @Override
+/*    @Override
     protected void scaleViews() {
         scaleImageSize(R.id.up_btn);
         scaleImageSize(R.id.down_btn);
-    }
+    }*/
 }

@@ -33,15 +33,16 @@ public class Level10 extends Level {
 
     @Override
     protected void scaleViews(){
-        scaleImageSize(R.id.handle);
+        scaleMargins(elevator);
+        scalePadding(elevator);
+        scaleImage(R.id.handle);
         scaleMargins(R.id.handle);
 
-        scaleImageSize(R.id.arrow_left);
+        scaleImage(R.id.arrow_left);
         scaleMargins(R.id.arrow_left);
 
-        scaleImageSize(R.id.arrow_right);
+        scaleImage(R.id.arrow_right);
         scaleMargins(R.id.arrow_right);
-        scalePaddings(R.id.elevator);
     }
 
     @Override
@@ -58,6 +59,9 @@ public class Level10 extends Level {
                         lastRotateY = event.getY();
                         return true;
                     case MotionEvent.ACTION_MOVE:
+                        if (elevator.isOpen())
+                            return false;
+
                         float angle =  getAngle(v, lastRotateX, lastRotateY, event.getX(), event.getY());
                         rotateHandle((float)((angle + droppedAngle) / Math.PI * 180));
 
