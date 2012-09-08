@@ -137,13 +137,13 @@ public class Elevator_open2doors extends Elevator {
         setDoorsOpen(false);
     }
 
-    @Override
+/*    @Override
     protected void setDoorsOpen(boolean isOpen) {
         doorsOpen = isOpen;
         findViewById(R.id.elevator_inner_arrow_up).setVisibility(isOpen ? VISIBLE : GONE);
         if (doorOpenListener != null)
             doorOpenListener.onDoorOpen();
-    }
+    }*/
 
     public View getLeftDoor(){
         return findViewById(R.id.elevator_door_left);

@@ -172,8 +172,10 @@ public class Elevator6 extends Elevator {
                         return true;
                     mTracking = false;
 
-                    if (rightDoorPosition - minPosition <10)
+                    if (rightDoorPosition - minPosition <10){
+                        findViewById(R.id.elev_doors).setVisibility(GONE);
                         setDoorsOpen(true);
+                    }
 
                     return true;
             }

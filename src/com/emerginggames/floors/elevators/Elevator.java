@@ -67,18 +67,18 @@ public abstract class Elevator extends ScaledRelativeLayout {
     protected void setDoorsOpen(boolean isOpen){
         doorsOpen = isOpen;
         if (isOpen){
-            findViewById(R.id.elev_doors).setVisibility(GONE);
+            //findViewById(R.id.elev_doors).setVisibility(GONE);
             findViewById(R.id.elevator_inner_arrow_up).setVisibility(VISIBLE);
             if (doorOpenListener != null)
                 doorOpenListener.onDoorOpen();
         }else {
-            findViewById(R.id.elev_doors).setVisibility(VISIBLE);
+            //findViewById(R.id.elev_doors).setVisibility(VISIBLE);
             findViewById(R.id.elevator_inner_arrow_up).setVisibility(GONE);
         }
     }
 
     public void reset(){
-        setDoorsOpen(false);
+        closeDoors();
     }
 
     public void debug(){
@@ -100,8 +100,18 @@ public abstract class Elevator extends ScaledRelativeLayout {
     public abstract boolean isOpening();
 
 
-    public abstract void openDoors();
-    public abstract void closeDoors();
+    public void openDoors(){
+        findViewById(R.id.elev_doors).setVisibility(GONE);
+        findViewById(R.id.elevator_inner_arrow_up).setVisibility(VISIBLE);
+        setDoorsOpen(true);
+    }
+
+    public void closeDoors(){
+        findViewById(R.id.elev_doors).setVisibility(VISIBLE);
+        findViewById(R.id.elevator_inner_arrow_up).setVisibility(GONE);
+        setDoorsOpen(false);
+    }
+
     public abstract int getLayoutId();
 
     public interface DoorOpenListener{

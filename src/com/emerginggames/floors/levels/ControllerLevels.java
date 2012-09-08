@@ -13,7 +13,7 @@ import java.lang.reflect.Constructor;
  * To change this template use File | Settings | File Templates.
  */
 public class ControllerLevels {
-    public static final int maxLevels = 9;
+    public static final int maxLevels = 10;
 
     public static Level getLevel(int n, Level.LevelListener levelListener, Context context) {
         if (n > maxLevels)

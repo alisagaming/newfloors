@@ -117,8 +117,10 @@ public class Elevator1 extends Elevator {
             leftDoor.setVisibility(View.INVISIBLE);
             leftDoorOpen = true;
             openingLeft =false;
-            if (rightDoorOpen)
+            if (rightDoorOpen){
+                findViewById(R.id.elev_doors).setVisibility(GONE);
                 setDoorsOpen(true);
+            }
         }
 
         @Override
@@ -134,8 +136,10 @@ public class Elevator1 extends Elevator {
             rightDoor.setVisibility(View.INVISIBLE);
             rightDoorOpen = true;
             openingRight =false;
-            if (leftDoorOpen)
+            if (leftDoorOpen){
+                findViewById(R.id.elev_doors).setVisibility(GONE);
                 setDoorsOpen(true);
+            }
         }
 
         @Override
