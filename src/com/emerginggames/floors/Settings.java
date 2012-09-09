@@ -8,6 +8,6 @@ package com.emerginggames.floors;
  * To change this template use File | Settings | File Templates.
  */
 public class Settings {
-    public static final boolean DEBUG = true;
+    public static final boolean DEBUG = false ;
     public static final boolean DEV_FUNC = true;
 }

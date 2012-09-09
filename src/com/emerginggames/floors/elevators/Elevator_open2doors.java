@@ -74,12 +74,6 @@ public class Elevator_open2doors extends Elevator {
     }
 
     @Override
-    public void reset() {
-        super.reset();
-        closeDoors();
-    }
-
-    @Override
     public int getLayoutId() {
         return R.layout.partial_elevator_2dors_open;
     }

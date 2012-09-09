@@ -59,7 +59,8 @@ public abstract class Level extends ScaledRelativeLayout {
     }
 
     void setControl(int id){
-        findViewById(id).setOnClickListener(controlClickListener);
+        View v = findViewById(id);
+        if (v != null) v.setOnClickListener(controlClickListener);
     }
 
     void setControl(View v, int n){

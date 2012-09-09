@@ -1,6 +1,7 @@
 package com.emerginggames.floors.elevators;
 
 import android.content.Context;
+import android.content.res.TypedArray;
 import android.util.AttributeSet;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,6 +18,7 @@ import com.emrg.view.ImageView;
  * To change this template use File | Settings | File Templates.
  */
 public abstract class Elevator extends ScaledRelativeLayout {
+    protected static final int DOOR_OPEN_DURATION = 1000;
     boolean doorsOpen;
     public DoorOpenListener doorOpenListener;
 
@@ -38,6 +40,17 @@ public abstract class Elevator extends ScaledRelativeLayout {
     }
 
     void parseAttributes(AttributeSet attrs){}
+
+    int parseScaledAttribute(TypedArray styledAttributes, int attributeId){
+        String valueStr = styledAttributes.getString(attributeId);
+        float value;
+        if (valueStr == null)
+            return 0;
+
+        value = styledAttributes.getDimension(attributeId, 0);
+        return (int) (valueStr.contains("px") ? value * Metrics.scale : value);
+    }
+
 
     public View getElevatorInnerView(){
         return findViewById(R.id.elevator_inner);
@@ -78,7 +91,7 @@ public abstract class Elevator extends ScaledRelativeLayout {
     }
 
     public void reset(){
-        closeDoors();
+        closeDoorsNow();
     }
 
     public void debug(){
@@ -107,6 +120,10 @@ public abstract class Elevator extends ScaledRelativeLayout {
     }
 
     public void closeDoors(){
+        closeDoorsNow();
+    }
+
+    public void closeDoorsNow(){
         findViewById(R.id.elev_doors).setVisibility(VISIBLE);
         findViewById(R.id.elevator_inner_arrow_up).setVisibility(GONE);
         setDoorsOpen(false);

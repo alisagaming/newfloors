@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+        >
+    <RelativeLayout android:id="@+id/elevator_inner" style="@style/WrapContentCenterHoriz"
+                    android:layout_marginTop="4px"
+            >
+        <com.emrg.view.ImageView style="@style/ElevatorInnerImg"/>
+        <com.emrg.view.ImageView style="@style/ElevatorInnerArrowUp"/>
+    </RelativeLayout>
+
+    <RelativeLayout android:id="@+id/elev_doors" style="@style/WrapContentCenterHoriz"
+                    android:layout_marginTop="10px"
+            >
+
+        <com.emrg.view.ImageView android:id="@+id/elevator_door" style="@style/ScaleImage"
+                                 android:src="@drawable/elev12_door"
+                />
+
+    </RelativeLayout>
+
+    <com.emrg.view.ImageView android:id="@+id/elevator_frame" style="@style/ScaleImageCenterHoriz"
+                             android:src="@drawable/elev12_frame"
+
+            />
+
+</RelativeLayout>

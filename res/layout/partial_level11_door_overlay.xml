@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="wrap_content" android:layout_height="wrap_content"
+              android:orientation="horizontal"
+              android:weightSum="2" android:baselineAligned="false"
+              android:padding="12px"
+        >
+    <LinearLayout android:layout_width="0px" android:layout_height="fill_parent"
+                  android:orientation="vertical"
+                  android:layout_weight="1" android:weightSum="2" android:baselineAligned="false">
+        <com.emrg.view.ImageView android:id="@+id/itemWater" style="@style/VerticalWeight1"
+                                 android:scaleType="fitCenter" android:adjustViewBounds="true"
+                                 android:src="@drawable/level11_water" android:layout_weight="1"
+                                 android:layout_margin="12px"/>
+        <com.emrg.view.ImageView android:id="@+id/itemTree" style="@style/VerticalWeight1"
+                                 android:scaleType="fitCenter" android:adjustViewBounds="true"
+                                 android:src="@drawable/level11_tree" android:layout_weight="1"
+                                 android:layout_margin="12px"/>
+    </LinearLayout>
+
+    <LinearLayout android:layout_width="0px" android:layout_height="fill_parent"
+                  android:orientation="vertical"
+                  android:layout_weight="1" android:weightSum="2" android:baselineAligned="false">
+        <com.emrg.view.ImageView android:id="@+id/itemSun" style="@style/VerticalWeight1"
+                                 android:scaleType="fitCenter" android:adjustViewBounds="true"
+                                 android:src="@drawable/level11_sun" android:layout_weight="1"
+                                 android:layout_margin="12px"/>
+        <com.emrg.view.ImageView android:id="@+id/itemFlower" style="@style/VerticalWeight1"
+                                 android:scaleType="fitCenter" android:adjustViewBounds="true"
+                                 android:src="@drawable/level11_flower" android:layout_weight="1"
+                                 android:layout_margin="12px"/>
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,6 +1,13 @@
 <resources>
+    <attr name="frame" format="reference"/>
+    <attr name="doorOpenDirection">
+        <enum name="up" value="0" />
+        <enum name="right" value="1" />
+        <enum name="down" value="2" />
+        <enum name="left" value="3" />
+    </attr>
     <declare-styleable name="Elevator_open2doors">
-        <attr name="frame" format="reference"/>
+        <attr name="frame"/>
         <attr name="leftDoor" format="reference"/>
         <attr name="rightDoor" format="reference"/>
         <attr name="leftDoorOpen" format="reference"/>
@@ -8,5 +15,13 @@
         <attr name="openDoorMargin" format="dimension"/>
         <attr name="frameMarginTop" format="dimension"/>
         <attr name="innerPaddingBottom" format="dimension"/>
+    </declare-styleable>
+    <declare-styleable name="Elevator_oneDoor">
+        <attr name="frame"/>
+        <attr name="door" format="reference"/>
+        <attr name="innerMarginTop" format="dimension"/>
+        <attr name="doorsMarginTop" format="dimension"/>
+        <attr name="doorOpenDirection"/>
+        <attr name="doorOverlay" format="reference"/>
     </declare-styleable>
 </resources>

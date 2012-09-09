@@ -7,13 +7,13 @@
 
     <com.emrg.view.ImageView android:id="@+id/wall"
                              style="@style/level_back"
-                             android:src="@drawable/level11_wall"
+                             android:src="@drawable/level12_wall"
                              android:layout_alignParentTop="true"
             />
     <com.emrg.view.ImageView android:id="@+id/floor"
                              style="@style/level_back"
                              android:layout_below="@+id/wall"
-                             android:src="@drawable/level11_floor"/>
+                             android:src="@drawable/level12_floor"/>
 
 
 
@@ -22,22 +22,26 @@
                                                             android:layout_height="wrap_content"
                                                             android:layout_centerHorizontal="true"
                                                             android:layout_above="@+id/floor"
-                                                            android:layout_marginBottom="-7px"
+                                                            android:layout_marginBottom="-4px"
                                                             android:layout_alignParentTop="false"
-                                                            app:doorOverlay="@layout/partial_level11_door_overlay"
-                                                            app:door="@drawable/elev11_door"
-                                                            app:frame="@drawable/elev11_frame"
-                                                            app:doorOpenDirection="left"
-                                                            app:doorsMarginTop="40px"
-                                                            app:innerMarginTop="36px"/>
+                                                            app:door="@drawable/elev12_door"
+                                                            app:frame="@drawable/elev12_frame"
+                                                            app:doorOpenDirection="up"
+                                                            app:doorsMarginTop="10px"
+                                                            app:innerMarginTop="4px"/>
 
     <com.emrg.view.ImageView android:id="@+id/hint"
                              style="@style/ScaleImage"
-                             android:src="@drawable/level11_wall_record"
-                             android:layout_above="@+id/elevator"
+                             android:src="@drawable/level12_hint"
+                             android:layout_below="@+id/elevator"
                              android:layout_marginLeft="30px"
-                             android:layout_marginBottom="20px"
+                             android:layout_marginTop="20px"
             />
 
+
+    <TextView android:id="@+id/debug"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+              android:layout_below="@+id/elevator"
+              android:layout_alignParentRight="true"/>
 
 </RelativeLayout>
