@@ -48,13 +48,4 @@ public class Level02 extends Level {
     public void start() {
         super.start();
     }
-
-/*    @Override
-    protected void scaleViews() {
-        scaleImageSize(R.id.up_btn);
-        scaleImageSize(R.id.down_btn);
-
-        scaleImageSize(R.id.key);
-        scaleMargins(R.id.key);
-    }*/
 }

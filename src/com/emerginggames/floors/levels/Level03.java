@@ -41,16 +41,6 @@ public class Level03 extends Level {
         startShakeListener();
     }
 
-/*    @Override
-    protected void scaleViews() {
-        scaleImageSize(R.id.up_btn);
-        scaleImageSize(R.id.down_btn);
-
-        scaleImageSize(R.id.note);
-        scaleMargins(R.id.note, true, false, false, true);
-        scaleImageSize(R.id.note_large);
-    }*/
-
     @Override
     public void onResume() {
         startShakeListener();
@@ -67,8 +57,6 @@ public class Level03 extends Level {
             stopShakeListener();
         }
     }
-
-
 
 
     //Shake detector
@@ -95,8 +83,6 @@ public class Level03 extends Level {
         public void onAccuracyChanged(Sensor sensor, int accuracy) {
         }
     };
-
-
 
     void stopShakeListener(){
         mSensorManager.unregisterListener(mSensorListener);

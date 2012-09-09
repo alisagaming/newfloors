@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res/com.emerginggames.floors"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent">
+
+    <com.emrg.view.ImageView android:id="@+id/wall"
+                             style="@style/level_back"
+                             android:src="@drawable/level13_wall"
+                             android:layout_alignParentTop="true"
+            />
+    <com.emrg.view.ImageView android:id="@+id/floor"
+                             style="@style/level_back"
+                             android:layout_below="@+id/wall"
+                             android:src="@drawable/level13_floor"/>
+
+
+    <TextView android:id="@+id/hint"
+              android:layout_width="wrap_content" android:layout_height="wrap_content"
+              android:layout_above="@+id/elevator"
+              android:layout_centerHorizontal="true"
+              android:background="@drawable/bw_rect_frame"
+              android:text="@string/level13_hint"
+              android:textSize="28px"
+              android:paddingLeft="12px"
+              android:paddingRight="12px"
+              android:paddingTop="8px"
+              android:paddingBottom="8px"
+              android:textColor="@android:color/black"
+              android:layout_marginBottom="20px"
+              />
+
+
+    <com.emerginggames.floors.elevators.Elevator_2DoorsSlide android:id="@+id/elevator"
+                                                            android:layout_width="wrap_content"
+                                                            android:layout_height="wrap_content"
+                                                            android:layout_centerHorizontal="true"
+                                                            android:layout_above="@+id/floor"
+                                                            android:layout_marginBottom="0px"
+                                                            android:layout_alignParentTop="false"
+                                                            app:frame="@drawable/elev13_frame"
+                                                            app:leftDoor="@drawable/elev13_door_left"
+                                                            app:rightDoor="@drawable/elev13_door_right"
+                                                            app:innerMarginTop="3px"
+                                                            app:rightDoorOverlay="@layout/partial_level13_overlay_right"
+                                                            app:leftDoorOverlay="@layout/partial_level13_overlay_left"
+                                                            />
+
+    <com.emrg.view.ImageView
+            android:id="@+id/button"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:src="@drawable/level04_button"
+            android:scaleType="fitCenter"
+            android:layout_alignParentRight="true"
+            android:layout_above="@+id/floor"
+            android:layout_marginBottom="100px"
+            android:layout_marginRight="50px"
+            android:layout_marginTop="15px"
+            />
+
+
+</RelativeLayout>

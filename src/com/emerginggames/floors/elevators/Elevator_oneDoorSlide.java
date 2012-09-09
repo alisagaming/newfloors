@@ -22,14 +22,13 @@ import com.emrg.view.ImageView;
  * Time: 18:00
  * To change this template use File | Settings | File Templates.
  */
-public class Elevator_oneDoor extends Elevator {
+public class Elevator_oneDoorSlide extends Elevator {
 
     private enum Direction {UP, RIGHT, DOWN, LEFT}
 
     Drawable frameDrawable;
     Drawable doorDrawable;
     int innerMarginTop;
-    int doorMarginTop;
     Direction doorOpenDirection;
     int doorOverlayId;
     View doorOverlay;
@@ -41,29 +40,27 @@ public class Elevator_oneDoor extends Elevator {
 
 
 
-    public Elevator_oneDoor(Context context) {
+    public Elevator_oneDoorSlide(Context context) {
         super(context);
     }
 
-    public Elevator_oneDoor(Context context, AttributeSet attrs) {
+    public Elevator_oneDoorSlide(Context context, AttributeSet attrs) {
         super(context, attrs);
     }
 
     @Override
     void parseAttributes(AttributeSet attrs) {
         super.parseAttributes(attrs);
-        TypedArray styledAttributes = getContext().obtainStyledAttributes(attrs, R.styleable.Elevator_oneDoor);
+        TypedArray styledAttributes = getContext().obtainStyledAttributes(attrs, R.styleable.Elevator_oneDoorSlide);
 
-        frameDrawable = styledAttributes.getDrawable(R.styleable.Elevator_oneDoor_frame);
-        doorDrawable = styledAttributes.getDrawable(R.styleable.Elevator_oneDoor_door);
+        frameDrawable = styledAttributes.getDrawable(R.styleable.Elevator_oneDoorSlide_frame);
+        doorDrawable = styledAttributes.getDrawable(R.styleable.Elevator_oneDoorSlide_door);
 
-        innerMarginTop = parseScaledAttribute(styledAttributes, R.styleable.Elevator_oneDoor_innerMarginTop);
-        doorMarginTop = parseScaledAttribute(styledAttributes, R.styleable.Elevator_oneDoor_doorsMarginTop);
+        innerMarginTop = parseScaledAttribute(styledAttributes, R.styleable.Elevator_oneDoorSlide_innerMarginTop);
 
-        doorOverlayId = styledAttributes.getResourceId(R.styleable.Elevator_oneDoor_doorOverlay, 0);
+        doorOverlayId = styledAttributes.getResourceId(R.styleable.Elevator_oneDoorSlide_doorOverlay, 0);
 
-        doorOpenDirection = Direction.values()[styledAttributes.getInt(R.styleable.Elevator_oneDoor_doorOpenDirection, 0)];
-        styledAttributes.peekValue(R.styleable.Elevator_oneDoor_innerMarginTop);
+        doorOpenDirection = Direction.values()[styledAttributes.getInt(R.styleable.Elevator_oneDoorSlide_doorOpenDirection, 0)];
         styledAttributes.recycle();
     }
 
@@ -104,9 +101,6 @@ public class Elevator_oneDoor extends Elevator {
 
         if (innerMarginTop != 0)
             ((MarginLayoutParams)findViewById(R.id.elevator_inner).getLayoutParams()).topMargin = innerMarginTop;
-
-        if (doorMarginTop != 0)
-            ((MarginLayoutParams)findViewById(R.id.elev_doors).getLayoutParams()).topMargin = doorMarginTop;
     }
 
     @Override

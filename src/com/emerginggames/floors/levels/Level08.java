@@ -63,12 +63,7 @@ public class Level08 extends Level {
 
     @Override
     protected void scaleViews() {
-        scaleMargins(elevator);
-        scaleImage(R.id.plate);
-        scaleMargins(R.id.plate);
-
-        scaleImage(R.id.handle);
-        scaleMargins(R.id.handle);
+        super.scaleViews();
 
         scaleImage(R.id.handle_placement);
         scaleMargins(R.id.handle_placement);
@@ -108,7 +103,5 @@ public class Level08 extends Level {
         lp.leftMargin = 2;
         lp.topMargin = 174;
         doorCont.addView(rightDoorHandle, lp);
-
-
     }
 }

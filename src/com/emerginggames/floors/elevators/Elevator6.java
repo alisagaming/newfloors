@@ -65,17 +65,6 @@ public class Elevator6 extends Elevator {
 
     @Override
     public void openDoors() {
-        /*View leftDoor = findViewById(R.id.elevator_door_left);
-        View rightDoor = findViewById(R.id.elevator_door_right);
-        leftDoor.clearAnimation();
-        Animation anim = AnimationUtils.loadAnimation(getContext(), R.anim.slide_left_full);
-
-        leftDoor.startAnimation(anim);
-
-        anim = AnimationUtils.loadAnimation(getContext(), R.anim.slide_left_double);
-        rightDoor.startAnimation(anim);
-        anim.setAnimationListener(doorOpenListener);
-        openingDoors = true;*/
     }
 
     @Override

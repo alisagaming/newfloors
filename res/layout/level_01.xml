@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res/com.emerginggames.floors"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent">
     <com.emrg.view.ImageView android:id="@+id/wall"
@@ -17,13 +18,17 @@
                              android:src="@drawable/fl1_floor"
             />
 
-    <com.emerginggames.floors.elevators.Elevator1 android:id="@+id/elevator"
-                    android:layout_width="wrap_content" android:layout_height="wrap_content"
-                    android:layout_centerHorizontal="true"
-                    android:layout_above="@+id/floor"
-                    android:layout_marginBottom="-6px"
-                    android:layout_alignParentTop="false"
-            />
+    <com.emerginggames.floors.elevators.Elevator_2DoorsSlide android:id="@+id/elevator"
+                                                             android:layout_width="wrap_content"
+                                                             android:layout_height="wrap_content"
+                                                             android:layout_centerHorizontal="true"
+                                                             android:layout_above="@+id/floor"
+                                                             android:layout_marginBottom="-6px"
+                                                             android:layout_alignParentTop="false"
+                                                             app:frame="@drawable/elev_frame"
+                                                             app:leftDoor="@drawable/elev1_door_left"
+                                                             app:rightDoor="@drawable/elev1_door_right"
+                                                             app:innerMarginTop="32px"/>
 
     <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
                   android:orientation="vertical"
@@ -35,14 +40,14 @@
         <com.emrg.view.ImageView
                 android:id="@+id/up_btn"
                 android:layout_width="wrap_content" android:layout_height="wrap_content"
-                android:src="@drawable/up_btn_green"
+                android:src="@drawable/level1_up_btn_green"
                 android:layout_marginBottom="5dp"
                 android:scaleType="fitCenter" android:adjustViewBounds="true"
                 />
         <com.emrg.view.ImageView
                 android:id="@+id/down_btn"
                 android:layout_width="wrap_content" android:layout_height="wrap_content"
-                android:src="@drawable/down_btn_red"
+                android:src="@drawable/level1_down_btn_red"
                 android:scaleType="fitCenter" android:adjustViewBounds="true"
                 />
     </LinearLayout>

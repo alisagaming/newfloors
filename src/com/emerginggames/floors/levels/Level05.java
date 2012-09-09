@@ -28,6 +28,7 @@ public class Level05 extends Level {
         super(levelListener, context);
         items = new SparseArray<Item>(1);
         items.append(R.id.note, new ItemNotepadLevel3(1, R.drawable.fl3_tool_note, true));
+        setControl(R.id.button);
     }
 
     @Override
@@ -62,21 +63,6 @@ public class Level05 extends Level {
     @Override
     protected void initView() {
         super.initView();
-    }
-
-    @Override
-    protected void scaleViews() {
-        scaleMargins(elevator);
-        scaleView(R.id.bar);
-        scaleMargins(R.id.bar);
-        scalePadding(R.id.bar);
-
-        scaleView(R.id.bar_fill);
-
-        scaleImage(R.id.button);
-        scaleMargins(R.id.button);
-
-        setControl(R.id.button);
     }
 
     void setBarPosition(float position) {

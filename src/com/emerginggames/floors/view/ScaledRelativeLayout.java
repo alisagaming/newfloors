@@ -62,6 +62,9 @@ public abstract class ScaledRelativeLayout extends RelativeLayout {
             scaleImage(id);
             return;
         }
+        if (v instanceof TextView)
+            ((TextView)v).setTextSize(TypedValue.COMPLEX_UNIT_PX, (int)( ((TextView) v) .getTextSize() * Metrics.scale ));
+
 
         ViewGroup.LayoutParams lp = v.getLayoutParams();
         if (lp.width >0)

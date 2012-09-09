@@ -42,13 +42,6 @@ public class Level07 extends Level {
     }
 
     @Override
-    protected void scaleViews() {
-        scaleMargins(elevator);
-        scaleImage(R.id.brush);
-        scaleMargins(R.id.brush);
-    }
-
-    @Override
     public void start() {
         super.start();
         mBrush = (ImageView)findViewById(R.id.brush);

@@ -110,6 +110,7 @@ public class FloorActivity extends Activity {
             @Override
             public void onAnimationEnd(Animation animation) {
                 currentLevel.clearAnimation();
+                currentLevel.onPause();
                 ViewGroup levelCont = (ViewGroup) findViewById(R.id.levelCont);
                 levelCont.removeView(currentLevel);
                 startLevel(prefs.getCurrentLevel());
@@ -158,10 +159,13 @@ public class FloorActivity extends Activity {
         if (nextLevel == null)
             return;
 
+        currentLevel.onPause();
+
         RelativeLayout.LayoutParams lp = new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.FILL_PARENT, ViewGroup.LayoutParams.FILL_PARENT);
         lp.addRule(RelativeLayout.ALIGN_PARENT_TOP);
 
         ViewGroup levelCont = (ViewGroup) findViewById(R.id.levelCont);
+
 
         oldLevel = currentLevel;
         currentLevel = nextLevel;
@@ -191,6 +195,7 @@ public class FloorActivity extends Activity {
         currentLevel.start();
 
         nextLevel = ControllerLevels.getLevel(prefs.getCurrentLevel() + 1, levelInterface, getApplicationContext());
+
     }
 
 

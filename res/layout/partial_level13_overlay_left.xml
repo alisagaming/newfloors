@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="fill_parent"
+              android:layout_height="fill_parent">
+    <com.emrg.view.ImageView style="@style/ScaleImage" android:src="@drawable/level13_over14" android:id="@+id/item14" android:visibility="gone"/>
+    <com.emrg.view.ImageView style="@style/ScaleImage" android:src="@drawable/level13_over13" android:id="@+id/item13" android:visibility="gone"/>
+    <com.emrg.view.ImageView style="@style/ScaleImage" android:src="@drawable/level13_over12" android:id="@+id/item12" android:visibility="gone"/>
+    <com.emrg.view.ImageView style="@style/ScaleImage" android:src="@drawable/level13_over11" android:id="@+id/item11" android:visibility="gone"/>
+    <com.emrg.view.ImageView style="@style/ScaleImage" android:src="@drawable/level13_over10" android:id="@+id/item10" android:visibility="gone"/>
+    <com.emrg.view.ImageView style="@style/ScaleImage" android:src="@drawable/level13_over9" android:id="@+id/item9" android:visibility="gone"/>
+    <com.emrg.view.ImageView style="@style/ScaleImage" android:src="@drawable/level13_over8" android:id="@+id/item8" android:visibility="gone"/>
+
+</RelativeLayout>

@@ -61,11 +61,4 @@ public class Level11 extends Level {
         setControl(R.id.itemTree);
         setControl(R.id.itemWater);
     }
-
-    @Override
-    protected void scaleViews() {
-        scaleMargins(elevator);
-        scaleImage(R.id.hint);
-        scaleMargins(R.id.hint);
-    }
 }

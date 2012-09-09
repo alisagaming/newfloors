@@ -59,11 +59,6 @@ public class Level06 extends Level {
         setControl(elev.getItem(4), 4);
     }
 
-/*    @Override
-    protected void scaleViews() {
-        scaleImageSize(R.id.arrow);
-        scaleMargins(R.id.arrow);
-    }*/
 
     @Override
     public void start() {

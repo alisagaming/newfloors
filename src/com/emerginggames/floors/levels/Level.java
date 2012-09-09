@@ -84,6 +84,17 @@ public abstract class Level extends ScaledRelativeLayout {
     public void itemSelected(Item item) {
     }
 
+    @Override
+    protected void scaleViews() {
+        super.scaleViews();
+        ViewGroup.LayoutParams lp = findViewById(R.id.wall).getLayoutParams();
+        lp.width = ViewGroup.LayoutParams.FILL_PARENT;
+        lp.height = ViewGroup.LayoutParams.WRAP_CONTENT;
+        lp = findViewById(R.id.floor).getLayoutParams();
+        lp.width = ViewGroup.LayoutParams.FILL_PARENT;
+        lp.height = ViewGroup.LayoutParams.WRAP_CONTENT;
+    }
+
     protected void initView() {
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         addView(inflater.inflate(getLevelLayoutId(), null));

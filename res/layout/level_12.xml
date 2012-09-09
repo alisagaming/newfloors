@@ -17,7 +17,7 @@
 
 
 
-    <com.emerginggames.floors.elevators.Elevator_oneDoor android:id="@+id/elevator"
+    <com.emerginggames.floors.elevators.Elevator_oneDoorSlide android:id="@+id/elevator"
                                                             android:layout_width="wrap_content"
                                                             android:layout_height="wrap_content"
                                                             android:layout_centerHorizontal="true"
@@ -27,7 +27,6 @@
                                                             app:door="@drawable/elev12_door"
                                                             app:frame="@drawable/elev12_frame"
                                                             app:doorOpenDirection="up"
-                                                            app:doorsMarginTop="10px"
                                                             app:innerMarginTop="4px"/>
 
     <com.emrg.view.ImageView android:id="@+id/hint"
@@ -37,11 +36,5 @@
                              android:layout_marginLeft="30px"
                              android:layout_marginTop="20px"
             />
-
-
-    <TextView android:id="@+id/debug"
-            android:layout_width="wrap_content" android:layout_height="wrap_content"
-              android:layout_below="@+id/elevator"
-              android:layout_alignParentRight="true"/>
 
 </RelativeLayout>

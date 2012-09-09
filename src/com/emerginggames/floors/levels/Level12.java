@@ -7,7 +7,7 @@ import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.view.View;
 import com.emerginggames.floors.R;
-import com.emerginggames.floors.elevators.Elevator_oneDoor;
+import com.emerginggames.floors.elevators.Elevator_oneDoorSlide;
 
 /**
  * Created with IntelliJ IDEA.
@@ -33,10 +33,9 @@ public class Level12 extends Level {
     }
 
     @Override
-    protected void scaleViews() {
-        scaleMargins(elevator);
-        scaleImage(R.id.hint);
-        scaleMargins(R.id.hint);
+    public void start() {
+        super.start();
+        startGravityListener();
     }
 
     @Override
@@ -56,7 +55,7 @@ public class Level12 extends Level {
 
     void onGravityNotUp(){
         if (elevator.isOpening())
-            ((Elevator_oneDoor)elevator).pauseDoors();
+            ((Elevator_oneDoorSlide)elevator).pauseDoors();
     }
 
     void onGravityDown(){
