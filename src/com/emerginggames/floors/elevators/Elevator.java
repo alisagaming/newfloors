@@ -56,8 +56,8 @@ public abstract class Elevator extends ScaledRelativeLayout {
         return findViewById(R.id.elevator_inner);
     }
 
-    public View getDoorsView(){
-        return findViewById(R.id.elev_doors);
+    public ViewGroup getDoorsView(){
+        return (ViewGroup)findViewById(R.id.elev_doors);
     }
 
     protected void setImageAndScale(int id, int drawableId){

@@ -19,7 +19,7 @@ import com.emerginggames.floors.elevators.Elevator;
  * Time: 19:55
  * To change this template use File | Settings | File Templates.
  */
-public abstract class ScaledRelativeLayout extends RelativeLayout {
+public class ScaledRelativeLayout extends RelativeLayout {
     public ScaledRelativeLayout(Context context) {
         super(context);
     }

@@ -143,4 +143,12 @@ public class Elevator_2DoorsSlide extends Elevator {
             }
         });
     }
+
+    public int getLeftDoorId(){
+        return R.id.elevator_door_left;
+    }
+
+    public int getRightDoorId(){
+        return R.id.elevator_door_right;
+    }
 }

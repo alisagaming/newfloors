@@ -37,7 +37,7 @@
                                                             android:layout_height="wrap_content"
                                                             android:layout_centerHorizontal="true"
                                                             android:layout_above="@+id/floor"
-                                                            android:layout_marginBottom="0px"
+                                                            android:layout_marginBottom="-6px"
                                                             android:layout_alignParentTop="false"
                                                             app:frame="@drawable/elev13_frame"
                                                             app:leftDoor="@drawable/elev13_door_left"
