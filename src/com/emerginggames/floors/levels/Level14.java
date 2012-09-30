@@ -106,6 +106,7 @@ public class Level14 extends Level {
                 @Override
                 public void run() {
                     elevator.openDoors();
+                    findViewById(R.id.level_control1).setVisibility(GONE);
                 }
             }, OPEN_DELAY);
 
@@ -138,7 +139,10 @@ public class Level14 extends Level {
         image.setScaleType(android.widget.ImageView.ScaleType.FIT_CENTER);
         image.setPadding(5,0,0,0);
         image.setId(R.id.level_control1);
+
         playButtonCont.addView(image, lpIcon);
+        scaleImage(image);
+        scalePadding(image);
 
         elevator.getDoorsView().addView(playButtonCont, lp);
 
