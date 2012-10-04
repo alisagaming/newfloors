@@ -51,7 +51,7 @@ public abstract class Level extends ScaledRelativeLayout {
                     if (itemView != null){
                         itemView.setTag(item);
                         itemView.setOnClickListener(itemClickListener);
-                        itemView.setVisibility(VISIBLE);
+                        //itemView.setVisibility(VISIBLE);
                     }
                 }
             }

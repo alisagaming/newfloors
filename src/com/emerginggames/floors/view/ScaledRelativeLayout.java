@@ -1,6 +1,12 @@
 package com.emerginggames.floors.view;
 
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.Rect;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
 import android.util.AttributeSet;
 import android.util.TypedValue;
 import android.view.View;
@@ -20,6 +26,7 @@ import com.emerginggames.floors.elevators.Elevator;
  * To change this template use File | Settings | File Templates.
  */
 public class ScaledRelativeLayout extends RelativeLayout {
+    Paint bmResizePaint;
     public ScaledRelativeLayout(Context context) {
         super(context);
     }
@@ -54,6 +61,7 @@ public class ScaledRelativeLayout extends RelativeLayout {
             if (child instanceof ViewGroup && ! (child instanceof ScaledRelativeLayout))
                 scaleViewsRecursive((ViewGroup)child);
         }
+        bmResizePaint = null;
     }
 
     protected void scaleView(int id){
@@ -93,6 +101,7 @@ public class ScaledRelativeLayout extends RelativeLayout {
         ViewGroup.LayoutParams lp = image.getLayoutParams();
         lp.width = (int) (image.getDrawable().getIntrinsicWidth() * Metrics.scale);
         lp.height = (int) (image.getDrawable().getIntrinsicHeight() * Metrics.scale);
+        scaleImageBitmap(image);
     }
 
     protected void scaleMargins(int id) {
@@ -138,5 +147,32 @@ public class ScaledRelativeLayout extends RelativeLayout {
         lp.topMargin = (int)(top * Metrics.scale);
         lp.rightMargin = (int)(right * Metrics.scale);
         lp.bottomMargin = (int)(bottom * Metrics.scale);
+    }
+
+    void scaleImageBitmap(ImageView image){
+        Drawable dr = image.getDrawable();
+        if (dr == null || ! (dr instanceof BitmapDrawable))
+            return;
+
+        Bitmap source = ((BitmapDrawable)dr).getBitmap();
+        int dstWidth = (int)(source.getWidth() * Metrics.scale);
+        int dstHeight = (int)(source.getHeight() * Metrics.scale);
+        Bitmap dest = Bitmap.createBitmap(dstWidth, dstHeight, Bitmap.Config.ARGB_8888);
+        Canvas c = new Canvas(dest);
+        if (bmResizePaint == null){
+            bmResizePaint = new Paint();
+            bmResizePaint.setFilterBitmap(true);
+            bmResizePaint.setAntiAlias(true);
+        }
+
+        Rect sourceRect = new Rect();
+        sourceRect.right = source.getWidth();
+        sourceRect.bottom = source.getHeight();
+
+        Rect destRect = new Rect();
+        destRect.right = dstWidth;
+        destRect.bottom = dstHeight;
+        c.drawBitmap(source, sourceRect, destRect, bmResizePaint);
+        image.setImageBitmap(dest);
     }
 }

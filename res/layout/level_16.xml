@@ -29,6 +29,18 @@
             />
 
     <com.emrg.view.ImageView
+            android:id="@+id/hint"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:src="@drawable/level16_hint"
+            android:scaleType="fitCenter"
+            android:layout_centerHorizontal="true"
+            android:layout_above="@+id/elevator"
+            android:layout_marginBottom="40px"
+            />
+
+
+
+    <com.emrg.view.ImageView
             android:id="@+id/stick1"
             android:layout_width="wrap_content" android:layout_height="wrap_content"
             android:src="@drawable/level16_stick"

@@ -1,5 +1,6 @@
 package com.emerginggames.floors.util;
 
+import android.util.FloatMath;
 import android.view.View;
 
 /**
@@ -30,16 +31,16 @@ public class Util {
             return - (float)Math.acos(cos);
     }
 
-    public static float getAngleInView(View v, double x2, double y2){
+    public static float getAngleInView(View v, float x2, float y2){
         int x0 = v.getWidth()/2;
         int y0 = v.getHeight()/2;
 
         x2 = x2 - x0;
         y2 = y2 - y0;
 
-        double len = Math.sqrt( (x2 * x2 + y2 * y2));
-        double sin = y2  / len;
-        double cos = x2  / len;
+        float len = FloatMath.sqrt((x2 * x2 + y2 * y2));
+        float sin = y2  / len;
+        float cos = x2  / len;
 
         if (sin < 0)
             return (float)Math.acos(cos);

@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res/com.emerginggames.floors"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent">
+
+    <com.emrg.view.ImageView android:id="@+id/wall"
+                             style="@style/level_back"
+                             android:src="@drawable/level17_wall"
+                             android:layout_alignParentTop="true"
+            />
+    <com.emrg.view.ImageView android:id="@+id/floor"
+                             style="@style/level_back"
+                             android:layout_below="@+id/wall"
+                             android:src="@drawable/level11_floor"/>
+
+
+    <com.emerginggames.floors.elevators.Elevator_oneDoorSlide android:id="@+id/elevator"
+                                                            android:layout_width="wrap_content"
+                                                            android:layout_height="wrap_content"
+                                                            android:layout_centerHorizontal="true"
+                                                            android:layout_above="@+id/floor"
+                                                            android:layout_marginBottom="-6px"
+                                                            android:layout_alignParentTop="false"
+                                                            app:door="@drawable/elev17_door"
+                                                            app:frame="@drawable/elev17_frame"
+                                                            app:doorOpenDirection="up"
+                                                            app:innerMarginTop="4px"
+            />
+
+    <com.emrg.view.ImageView
+            android:id="@+id/hint"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:src="@drawable/level17_zero"
+            android:scaleType="fitCenter"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/elevator"
+            android:layout_marginTop="30px"
+            />
+
+
+
+    <com.emrg.view.ImageView
+            android:id="@+id/chip_b"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:src="@drawable/level17_chip_b"
+            android:scaleType="fitCenter"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/elevator"
+            android:layout_marginRight="70px"
+            android:layout_marginTop="50px"
+            android:visibility="gone"
+            />
+
+    <com.emrg.view.ImageView
+            android:id="@+id/chip_r"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:src="@drawable/level17_chip_r"
+            android:scaleType="fitCenter"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/elevator"
+            android:layout_marginLeft="70px"
+            android:layout_marginTop="50px"
+            android:visibility="gone"
+            />
+
+    <com.emrg.view.ImageView
+            android:id="@+id/hole_r"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:src="@drawable/level17_hole_r"
+            android:scaleType="fitCenter"
+            android:layout_alignParentLeft="true"
+            android:layout_above="@+id/elevator"
+            android:layout_marginLeft="70px"
+            android:layout_marginBottom="50px"
+            />
+
+    <com.emrg.view.ImageView
+            android:id="@+id/hole_b"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:src="@drawable/level17_hole_b"
+            android:scaleType="fitCenter"
+            android:layout_alignParentRight="true"
+            android:layout_above="@+id/elevator"
+            android:layout_marginRight="70px"
+            android:layout_marginBottom="50px"
+            />
+
+    <com.emrg.view.ImageView
+            android:id="@+id/chip_in_hole_r"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:src="@drawable/level17_item_chip_r"
+            android:scaleType="fitCenter"
+            android:layout_alignBottom="@+id/hole_r"
+            android:layout_alignLeft="@+id/hole_r"
+            android:layout_marginLeft="7px"
+            android:layout_marginBottom="5px"
+            android:visibility="gone"
+            />
+
+    <com.emrg.view.ImageView
+            android:id="@+id/chip_in_hole_b"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:src="@drawable/level17_item_chip_b"
+            android:scaleType="fitCenter"
+            android:layout_alignBottom="@+id/hole_b"
+            android:layout_alignLeft="@+id/hole_b"
+            android:layout_marginLeft="4px"
+            android:layout_marginBottom="5px"
+            android:visibility="gone"
+            />
+
+    <RelativeLayout android:id="@+id/roulette"
+                    android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:layout_alignBottom="@+id/elevator"
+                    android:layout_centerHorizontal="true"
+            >
+
+        <com.emrg.view.ImageView
+                android:id="@+id/roulette_back"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:src="@drawable/level17_roulette_back"
+                android:scaleType="fitCenter"/>
+
+        <com.emrg.view.ImageView
+                android:id="@+id/roulette_drum"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:src="@drawable/level17_drum"
+                android:scaleType="fitCenter"
+                android:layout_centerInParent="true"
+                />
+
+        <com.emrg.view.ImageView
+                android:id="@+id/roulette_drum_grid"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:src="@drawable/level17_drum_sun"
+                android:scaleType="fitCenter"
+                android:layout_centerInParent="true"
+                />
+
+        <com.emrg.view.ImageView
+                android:id="@+id/roulette_circle"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:src="@drawable/level17_circle"
+                android:scaleType="fitCenter"
+                android:layout_centerInParent="true"
+                />
+
+        <com.emrg.view.ImageView
+                android:id="@+id/roulette_handle"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:src="@drawable/level17_handle"
+                android:scaleType="fitCenter"
+                android:layout_centerInParent="true"
+                />
+
+        <com.emrg.view.ImageView
+                android:id="@+id/ball"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:src="@drawable/level17_ball"
+                android:scaleType="fitCenter"
+                android:layout_centerHorizontal="true"
+                android:layout_alignTop="@+id/roulette_drum"
+                android:layout_marginTop="50px"
+                />
+
+
+    </RelativeLayout>
+
+
+</RelativeLayout>
