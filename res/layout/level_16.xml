@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res/com.emerginggames.floors"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent">
+
+    <com.emrg.view.ImageView android:id="@+id/wall"
+                             style="@style/level_back"
+                             android:src="@drawable/level16_wall"
+                             android:layout_alignParentTop="true"
+            />
+    <com.emrg.view.ImageView android:id="@+id/floor"
+                             style="@style/level_back"
+                             android:layout_below="@+id/wall"
+                             android:src="@drawable/level10_floor"/>
+
+
+
+    <com.emerginggames.floors.elevators.ElevatorNoDoors android:id="@+id/elevator"
+                                                            android:layout_width="wrap_content"
+                                                            android:layout_height="wrap_content"
+                                                            android:layout_centerHorizontal="true"
+                                                            android:layout_above="@+id/floor"
+                                                            android:layout_marginBottom="-6px"
+                                                            android:layout_alignParentTop="false"
+                                                            app:frame="@drawable/elev16_frame"
+                                                            app:innerMarginTop="3px"
+            />
+
+    <com.emrg.view.ImageView
+            android:id="@+id/stick1"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:src="@drawable/level16_stick"
+            android:scaleType="fitCenter"
+            android:layout_alignParentLeft="true"
+            android:layout_above="@+id/floor"
+            android:layout_marginLeft="60px"
+            />
+
+    <com.emrg.view.ImageView
+            android:id="@+id/stick2"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:src="@drawable/level16_stick"
+            android:scaleType="fitCenter"
+            android:layout_centerHorizontal="true"
+            android:layout_above="@+id/floor"
+            />
+
+    <com.emrg.view.ImageView
+            android:id="@+id/stick3"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:src="@drawable/level16_stick"
+            android:scaleType="fitCenter"
+            android:layout_alignParentRight="true"
+            android:layout_above="@+id/floor"
+            android:layout_marginRight="60px"
+            />
+
+    <com.emrg.view.ImageView
+            android:id="@+id/ring0"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:src="@drawable/level16_ring0"
+            android:scaleType="fitCenter"
+            android:layout_centerHorizontal="true"
+            android:layout_above="@+id/floor"
+            />
+
+    <com.emrg.view.ImageView
+            android:id="@+id/ring1"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:src="@drawable/level16_ring1"
+            android:scaleType="fitCenter"
+            android:layout_centerHorizontal="true"
+            android:layout_above="@+id/ring0"
+            />
+
+    <com.emrg.view.ImageView
+            android:id="@+id/ring2"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:src="@drawable/level16_ring2"
+            android:scaleType="fitCenter"
+            android:layout_centerHorizontal="true"
+            android:layout_above="@+id/ring1"
+            />
+
+    <com.emrg.view.ImageView
+            android:id="@+id/ring3"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:src="@drawable/level16_ring3"
+            android:scaleType="fitCenter"
+            android:layout_centerHorizontal="true"
+            android:layout_above="@+id/ring2"
+            />
+
+    <com.emrg.view.ImageView
+            android:id="@+id/ring4"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:src="@drawable/level16_ring4"
+            android:scaleType="fitCenter"
+            android:layout_centerHorizontal="true"
+            android:layout_above="@+id/ring3"
+            />
+
+    <com.emrg.view.ImageView
+            android:id="@+id/ring5"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:src="@drawable/level16_ring5"
+            android:scaleType="fitCenter"
+            android:layout_centerHorizontal="true"
+            android:layout_above="@+id/ring4"
+            />
+
+
+
+
+</RelativeLayout>

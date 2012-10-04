@@ -35,4 +35,9 @@
         <attr name="leftDoorOverlay" format="reference"/>
         <attr name="rightDoorOverlay" format="reference"/>
     </declare-styleable>
+
+    <declare-styleable name="ElevatorNoDoors">
+        <attr name="frame"/>
+        <attr name="innerMarginTop"/>
+    </declare-styleable>
 </resources>

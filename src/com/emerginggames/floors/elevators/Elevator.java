@@ -5,6 +5,8 @@ import android.content.res.TypedArray;
 import android.util.AttributeSet;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.AlphaAnimation;
+import android.view.animation.Animation;
 import com.emerginggames.floors.Metrics;
 import com.emerginggames.floors.R;
 import com.emerginggames.floors.view.ScaledRelativeLayout;
@@ -81,7 +83,7 @@ public abstract class Elevator extends ScaledRelativeLayout {
         doorsOpen = isOpen;
         if (isOpen){
             //findViewById(R.id.elev_doors).setVisibility(GONE);
-            findViewById(R.id.elevator_inner_arrow_up).setVisibility(VISIBLE);
+            fadeInUpArrow();
             if (doorOpenListener != null)
                 doorOpenListener.onDoorOpen();
         }else {
@@ -115,9 +117,10 @@ public abstract class Elevator extends ScaledRelativeLayout {
 
     public void openDoors(){
         findViewById(R.id.elev_doors).setVisibility(GONE);
-        findViewById(R.id.elevator_inner_arrow_up).setVisibility(VISIBLE);
         setDoorsOpen(true);
     }
+
+
 
     public void closeDoors(){
         closeDoorsNow();
@@ -125,7 +128,6 @@ public abstract class Elevator extends ScaledRelativeLayout {
 
     public void closeDoorsNow(){
         findViewById(R.id.elev_doors).setVisibility(VISIBLE);
-        findViewById(R.id.elevator_inner_arrow_up).setVisibility(GONE);
         setDoorsOpen(false);
     }
 
@@ -133,5 +135,29 @@ public abstract class Elevator extends ScaledRelativeLayout {
 
     public interface DoorOpenListener{
         public void onDoorOpen();
+    }
+
+    private void fadeInUpArrow(){
+        findViewById(R.id.elevator_inner_arrow_up).setVisibility(VISIBLE);
+        Animation anim = new AlphaAnimation(0, 1);
+        anim.setFillBefore(true);
+        anim.setDuration(300);
+        findViewById(R.id.elevator_inner_arrow_up).startAnimation(anim);
+
+        anim.setAnimationListener(new Animation.AnimationListener() {
+            @Override
+            public void onAnimationStart(Animation animation) {
+            }
+
+            @Override
+            public void onAnimationEnd(Animation animation) {
+                findViewById(R.id.elevator_inner_arrow_up).clearAnimation();
+            }
+
+            @Override
+            public void onAnimationRepeat(Animation animation) {
+            }
+        });
+
     }
 }
